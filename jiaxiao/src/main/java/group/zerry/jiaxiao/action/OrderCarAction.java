@@ -7,12 +7,16 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
 
 import com.alibaba.fastjson.JSON;
 import com.opensymphony.xwork2.ActionSupport;
 
 import group.zerry.jiaxiao.service.OrderCarService;
 
+@Controller  
+@Scope("prototype") 
 public class OrderCarAction extends ActionSupport {
 	private int    car_id;
 	private int	   stu_id;

@@ -1,5 +1,8 @@
 package group.zerry.jiaxiao.dao;
 
-public class CarDao {
+import group.zerry.jiaxiao.entity.Car;
+
+public interface CarDao {
+	Car[] selectCarsInRest(String date);
 
 }

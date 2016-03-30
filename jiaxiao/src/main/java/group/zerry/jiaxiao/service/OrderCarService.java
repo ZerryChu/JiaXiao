@@ -9,7 +9,7 @@ public interface OrderCarService {
 	
 	OrderCarInfo[] showCarOrderInfo(String date);
 	
-	Car getCarInRest(String date);
+	Car[] getCarInRest(String date);
 	
-	Coach getCoachInRest(String date);
+	Coach[] getCoachInRest(String date);
 }

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="group.zerry.jiaxiao.dao.OrderCarDao">
+	<select id="selectOrderCarByDate" resultType="OrderCarInfo">
+		SELECT
+			stu_inf.`name` AS student_name,
+			car_type,
+			car_number,
+			coach_inf.`name` AS coach_name,
+			order_car_inf.start_time
+		FROM
+			order_car_inf,
+			coach_inf,
+			car_inf,
+			stu_inf
+		WHERE
+			start_time = #{date}
+		AND order_car_inf.car_id = car_inf.id
+		AND order_car_inf.coach_id = coach_inf.id
+		AND order_car_inf.stu_id = stu_inf.id
+	</select>
+	
+	<insert id="addOrderCarInfo">
+	INSERT INTO order_car_inf
+	VALUES
+		(#{0}, #{1}, #{2}, #{3})
+	</insert>
+	
+</mapper>

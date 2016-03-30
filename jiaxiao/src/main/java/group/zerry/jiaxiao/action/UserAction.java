@@ -30,10 +30,6 @@ public class UserAction  extends ActionSupport {
 	@Autowired
 	private UserService userService;
 	
-	public String hello() {
-		return "success";
-	}
-	
 	public String login() {
 		if (true == userService.login(username, password)) {
 			UUID uuid = UUID.randomUUID();

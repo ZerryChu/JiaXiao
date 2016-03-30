@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="group.zerry.jiaxiao.dao.CarDao">
+	<select id="selectCarsInRest" resultType="Car">
+		SELECT
+			id,
+			car_number,
+			car_type
+		FROM
+			car_inf
+		WHERE
+			id NOT IN (
+				SELECT
+					car_id AS id
+				FROM
+					order_car_inf
+				WHERE
+					start_time = #{date}
+			)
+	</select>
+	
+</mapper>

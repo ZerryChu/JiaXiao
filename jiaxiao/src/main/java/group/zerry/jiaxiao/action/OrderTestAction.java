@@ -7,12 +7,16 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Controller;
 
 import com.alibaba.fastjson.JSON;
 import com.opensymphony.xwork2.ActionSupport;
 
 import group.zerry.jiaxiao.service.OrderTestService;
 
+@Controller  
+@Scope("prototype") 
 public class OrderTestAction extends ActionSupport {
 	private int stu_id;
 	private int test_id;

@@ -21,7 +21,7 @@
 		<interceptors>
 			<interceptor name="checkAuthority"
 				class="group.zerry.jiaxiao.interceptors.CheckAuthority">
-				<param name="excludeMethods">login</param>
+				<param name="excludeMethods">showInfo,showStudentInfo,showStudentById</param>				
 			</interceptor>
 
 			<!-- <interceptor-stack name="myStack"> <interceptor-ref name="defaultStack"></interceptor-ref> 
@@ -39,14 +39,25 @@
 		</action>
 		<action name="student_*" class="group.zerry.jiaxiao.action.StudentAction"
 			method="{1}">
+			 <interceptor-ref name="checkAuthority"/>
 			<result name="success">/index.jsp</result>			
 			<!-- <result name="re" type="redirectAction">user_queryAllUser.action</result> -->
 		</action>
 		<action name="orderTest_*" class="group.zerry.jiaxiao.action.OrderTestAction"
 			method="{1}">
+			<interceptor-ref name="checkAuthority"/>
+			<result name="success">/index.jsp</result>			
+			<!-- <result name="re" type="redirectAction">user_queryAllUser.action</result> -->
+		</action>
+		<action name="orderCar_*" class="group.zerry.jiaxiao.action.OrderCarAction"
+			method="{1}">
+		    <interceptor-ref name="checkAuthority"/>
 			<result name="success">/index.jsp</result>			
 			<!-- <result name="re" type="redirectAction">user_queryAllUser.action</result> -->
 		</action>
 	</package>
 
 </struts>    
+
+
+<!--  date格式validate XX-XX-XX  -->

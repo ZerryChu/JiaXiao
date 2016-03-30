@@ -11,8 +11,10 @@
 		<typeAlias alias="User" type="group.zerry.jiaxiao.entity.User" />
 		<typeAlias alias="Count" type="group.zerry.jiaxiao.entity.Count" />		
 		<typeAlias alias="Student" type="group.zerry.jiaxiao.entity.Student" />		
-		<typeAlias alias="OrderTestInfo" type="group.zerry.jiaxiao.entity.OrderTestInfo" />		
-		<!--  <typeAlias alias="OrderCarInfo" type="group.zerry.jiaxiao.entity.OrderCarInfo" />		-->
+		<typeAlias alias="OrderTestInfo" type="group.zerry.jiaxiao.entity.OrderTestInfo" />
+		<typeAlias alias="Car" type="group.zerry.jiaxiao.entity.Car" />		
+		<typeAlias alias="Coach" type="group.zerry.jiaxiao.entity.Coach" />				
+		<typeAlias alias="OrderCarInfo" type="group.zerry.jiaxiao.entity.OrderCarInfo" />
 		
 	</typeAliases>
 

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+ <select id="selectCoachInRest" resultType="Coach">
+	SELECT
+		id,
+		NAME
+	FROM
+		coach_inf
+	WHERE
+		id NOT IN (
+			SELECT
+				coach_id AS id
+			FROM
+				order_car_inf
+			WHERE
+				start_time = #{date}
+		)
+ </select>
