@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="group.zerry.jiaxiao.dao.OrderTestDao">
+	<select id="selectOrderTestByDate" resultType="OrderTestInfo">
+		SELECT
+			stu_inf.`name` AS student_name,
+			test_inf.state AS test_state,
+			order_test_inf.start_time,
+			score
+		FROM
+			order_test_inf,
+			stu_inf,
+			test_inf
+		WHERE
+			order_test_inf.start_time = #{date}
+		AND stu_id = stu_inf.id
+		AND test_id = test_inf.id
+	</select>
+	
+	<insert id="addOrderTest">
+		INSERT INTO order_test_inf (stu_id, test_id, start_time)
+			VALUES
+		(#{0}, #{1}, #{2})
+	</insert>
+</mapper>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="group.zerry.jiaxiao.dao.StudentDao">
+	
+	<select id="selectStudents" resultType="Student">
+		SELECT
+			*
+		FROM
+			stu_inf
+	</select>
+	
+	<select id="selectStudentById" resultType="Student">
+		SELECT
+			*
+		FROM
+			stu_inf
+		WHERE
+			id = #{0}
+	</select>
+	
+	<insert id="addStudent" parameterType="Student">
+		INSERT INTO stu_inf (
+			NAME,
+			state_id,
+			register_time,
+			pic
+		)
+		VALUES (
+			#{name}, 0, now(), #{pic}
+		)
+	</insert>
+	
+</mapper>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="cacheEnabled" value="true" />
+		<setting name="useGeneratedKeys" value="true" />
+	</settings>
+
+	<typeAliases>
+		<typeAlias alias="User" type="group.zerry.jiaxiao.entity.User" />
+		<typeAlias alias="Count" type="group.zerry.jiaxiao.entity.Count" />		
+		<typeAlias alias="Student" type="group.zerry.jiaxiao.entity.Student" />		
+		<typeAlias alias="OrderTestInfo" type="group.zerry.jiaxiao.entity.OrderTestInfo" />		
+		<!--  <typeAlias alias="OrderCarInfo" type="group.zerry.jiaxiao.entity.OrderCarInfo" />		-->
+		
+	</typeAliases>
+
+	<plugins>
+		<plugin interceptor="group.zerry.jiaxiao.interceptors.PageHelperInterceptor"></plugin>
+	</plugins>
+	
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<property name="url" value="jdbc:mysql://localhost:3306/jiaxiao" />
+				<property name="username" value="root" />
+				<property name="password" value="486579" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<!-- spring整合后，有获取mapper的机制，无需指定 <mappers> <mapper resource="resources/mybatis/mappers/UserMapper.xml" 
+		/> </mappers> -->
+</configuration>
