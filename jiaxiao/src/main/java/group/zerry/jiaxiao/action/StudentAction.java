@@ -2,9 +2,13 @@ package group.zerry.jiaxiao.action;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.jms.QueueReceiver;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.catalina.LifecycleState;
 import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -17,25 +21,56 @@ import com.sun.xml.internal.bind.v2.schemagen.xmlschema.Occurs;
 import group.zerry.jiaxiao.entity.Student;
 import group.zerry.jiaxiao.service.StudentService;
 
-@Controller
+/**
+ * 
+ * @author  zhuzirui
+ * @content 学生信息相关处理
+ */
+@Controller  
 @Scope("prototype") 
 public class StudentAction extends ActionSupport {
 	
-	private Student student;
-	private int     id; // student id
+	private static final long serialVersionUID = 1L;
+	
+	private Student       student;
+	private int           query_id; // student id
+	private List<Student> students;
 
 	@Autowired
 	private StudentService studentService;
 	
 	public String register() {
-		if (studentService.register(student)) {
+		boolean result = false;
+		try {
+			result = studentService.register(student);
+		} catch(Exception e) {
+			//
+			return "error";
+		}
+		
+		if (true == result) {
 			return "success";
 		} else {
 			return "wrong";
 		}
 	}
 
-	public void showStudentInfo() {
+	public String showStudentInfo() {
+		students = new ArrayList<>();
+		Student[] stuArray = null;
+		try {
+			stuArray= studentService.showInfo();
+			for (int i = 0;i < stuArray.length; i++) {
+				students.add(stuArray[i]);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			// 写日记 
+			return "error";
+		}
+		return "success";
+		
+		/* JSON
 		HttpServletResponse response = ServletActionContext.getResponse();
 		PrintWriter out = null;
 		try {
@@ -49,9 +84,26 @@ public class StudentAction extends ActionSupport {
 		} finally {
 			out.close();
 		}
+		*/
 	}
 
-	public void showStudentById() {
+	public String showStudentById() {
+		students = new ArrayList<>();
+		
+		// 未传参
+		if (0 == query_id) {
+			return "error";
+		}
+		
+		try {
+			students.add(studentService.showInfoById(query_id));
+		} catch(Exception e) {
+			// 
+			return "error";
+		}
+		return "success";
+		
+		/* JSON
 		HttpServletResponse response = ServletActionContext.getResponse();
 		PrintWriter out = null;
 		try {
@@ -65,6 +117,7 @@ public class StudentAction extends ActionSupport {
 		} finally {
 			out.close();
 		}
+		*/
 	}
 
 	public Student getStudent() {
@@ -74,12 +127,22 @@ public class StudentAction extends ActionSupport {
 	public void setStudent(Student student) {
 		this.student = student;
 	}
-	public int getId() {
-		return id;
+
+	public int getQuery_id() {
+		return query_id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setQuery_id(int query_id) {
+		this.query_id = query_id;
 	}
+	
+	public List<Student> getStudents() {
+		return students;
+	}
+
+	public void setStudents(List<Student> students) {
+		this.students = students;
+	}
+	
 
 }

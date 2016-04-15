@@ -9,6 +9,7 @@
 
 	<typeAliases>
 		<typeAlias alias="User" type="group.zerry.jiaxiao.entity.User" />
+		<typeAlias alias="Test" type="group.zerry.jiaxiao.entity.Test" />		
 		<typeAlias alias="Count" type="group.zerry.jiaxiao.entity.Count" />		
 		<typeAlias alias="Student" type="group.zerry.jiaxiao.entity.Student" />		
 		<typeAlias alias="OrderTestInfo" type="group.zerry.jiaxiao.entity.OrderTestInfo" />

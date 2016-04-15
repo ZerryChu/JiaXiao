@@ -2,19 +2,20 @@
  <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
- <select id="selectCoachInRest" resultType="Coach">
-	SELECT
-		id,
-		NAME
-	FROM
-		coach_inf
-	WHERE
-		id NOT IN (
-			SELECT
-				coach_id AS id
-			FROM
-				order_car_inf
-			WHERE
-				start_time = #{date}
-		)
- </select>
+<mapper namespace="group.zerry.jiaxiao.dao.CoachDao">
+	 <select id="selectCoachInRest" resultType="Coach">
+		SELECT
+			*
+		FROM
+			coach_inf
+		WHERE
+			id NOT IN (
+				SELECT
+					coach_id AS id
+				FROM
+					order_car_inf
+				WHERE
+					start_time = #{date}
+			)
+	 </select>
+ </mapper>

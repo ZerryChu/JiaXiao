@@ -16,9 +16,10 @@ import java.util.List;
 import java.util.Properties;
 
 /**
- * Mybatis - 通用分页拦截器
+ * Mybatis - 分页拦截器
+ * @author zhuzirui
+ * @since 2015-3-15.
  * 
- * @author liuzh/abel533/isea Created by liuzh on 14-4-15.
  */
 @Intercepts({ @Signature(type = StatementHandler.class, method = "prepare", args = { Connection.class }),
 		@Signature(type = ResultSetHandler.class, method = "handleResultSets", args = { Statement.class }) })

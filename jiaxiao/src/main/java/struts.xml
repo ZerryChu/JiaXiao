@@ -29,7 +29,7 @@
 				</interceptor-stack> -->
 		</interceptors>
 		<global-results>
-			<result name="wrong">/wrong.jsp</result>
+			<result name="wrong">/error.jsp</result>
 			<result name="error">/error.jsp</result>
 		</global-results>
 		<action name="user_*" class="group.zerry.jiaxiao.action.UserAction"
@@ -39,8 +39,8 @@
 		</action>
 		<action name="student_*" class="group.zerry.jiaxiao.action.StudentAction"
 			method="{1}">
-			 <interceptor-ref name="checkAuthority"/>
-			<result name="success">/index.jsp</result>			
+			 <!--  <interceptor-ref name="checkAuthority"/>-->
+			<result name="success">/stu_info.jsp</result>			
 			<!-- <result name="re" type="redirectAction">user_queryAllUser.action</result> -->
 		</action>
 		<action name="orderTest_*" class="group.zerry.jiaxiao.action.OrderTestAction"
@@ -50,9 +50,11 @@
 			<!-- <result name="re" type="redirectAction">user_queryAllUser.action</result> -->
 		</action>
 		<action name="orderCar_*" class="group.zerry.jiaxiao.action.OrderCarAction"
-			method="{1}">
-		    <interceptor-ref name="checkAuthority"/>
-			<result name="success">/index.jsp</result>			
+		    method="{1}">
+			 <!--  <interceptor-ref name="checkAuthority"/>-->
+			<result name="query_success">/car_plan.jsp</result>
+			<result name="searchTime_success">/train_car.jsp</result>
+			<result name="add_success">/car_plan.jsp</result>		
 			<!-- <result name="re" type="redirectAction">user_queryAllUser.action</result> -->
 		</action>
 	</package>

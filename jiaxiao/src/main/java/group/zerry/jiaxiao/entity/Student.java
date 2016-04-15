@@ -3,10 +3,17 @@ package group.zerry.jiaxiao.entity;
 public class Student {
 	private int    id;
 	private String name;
-	private int    test_id;
+	private int    state_id;
+	private String state;
 	private String register_time;
 	private String pic;
 	
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
 	public String getPic() {
 		return pic;
 	}
@@ -25,11 +32,11 @@ public class Student {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getTest_id() {
-		return test_id;
+	public int getState_id() {
+		return state_id;
 	}
-	public void setTest_id(int test_id) {
-		this.test_id = test_id;
+	public void setState_id(int state_id) {
+		this.state_id = state_id;
 	}
 	public String getRegister_time() {
 		return register_time;
