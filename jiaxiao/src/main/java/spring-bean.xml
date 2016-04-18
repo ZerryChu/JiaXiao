@@ -20,6 +20,7 @@
 	<!-- <bean id="cacheTools" class="molian.utils.RedisUtils"
 		init-method="init" />
 	 -->
-	<!-- 使用Aliyun OCS作为缓存 <bean id="cacheTools" class="me.zhilong.bms.api.utils.MemcachedUtils" 
+	<!-- 使用Aliyun OCS作为缓存 
+	<bean id="cacheTools" class="me.zhilong.bms.api.utils.MemcachedUtils" 
 		init-method="init" /> -->
 </beans>

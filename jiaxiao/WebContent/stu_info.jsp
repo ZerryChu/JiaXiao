@@ -206,7 +206,7 @@
 									<h5 class="no-m-bottom">Zirui Zhu</h5>
 									<div class="m-top-xs">
 										<a href="profile.html" class="m-right-sm">Profile</a> <a
-											href="signin.html">Log out</a>
+											href="signin.jsp">Log out</a>
 									</div>
 								</div></li>
 							<li><a href="inbox.html"> Inbox <span
@@ -381,17 +381,17 @@
 						</span> <span class="menu-content-hover block"> 教学 </span>
 					</a>
 						<ul class="submenu bg-palette4">
-							<li><a href="stu_info.jsp"><span
+							<li><a href="stu_info.jsp?username=${param.username}&userToken=${param.userToken}"><span
 									class="submenu-label">学员查询</span></a></li>
-							<li><a href="stu_reg.jsp"><span
+							<li><a href="stu_reg.jsp?username=${param.username}&userToken=${param.userToken}"><span
 									class="submenu-label">新学员登记</span></a></li>
 							<li class="openable"><a href="#"><small
 									class="badge badge-success badge-square bounceIn animation-delay2 m-left-xs pull-right">2</small><span
 									class="submenu-label">练车管理</span></a>
 								<ul class="submenu third-level">
-									<li><a href="train_car.jsp"><span
+									<li><a href="car_plan.jsp?username=${param.username}&userToken=${param.userToken}"><span
 											class="submenu-label">练车记录查询</a></li>
-									<li><a href="car_plan.jsp"><span
+									<li><a href="train_car.jsp?username=${param.username}&userToken=${param.userToken}"><span
 											class="submenu-label">练车安排</span></a></li>
 								</ul></li>
 							<li class="openable"><a href="#"> <small
@@ -399,9 +399,9 @@
 									<span class="submenu-label">考试管理</span>
 							</a>
 								<ul class="submenu third-level">
-									<li><a href="static_table.html"><span
+									<li><a href="test_query.jsp?username=${param.username}&userToken=${param.userToken}"><span
 											class="submenu-label">考试查询</a></li>
-									<li><a href="datatable.html"><span
+									<li><a href="test_plan.jsp?username=${param.username}&userToken=${param.userToken}"><span
 											class="submenu-label">考试安排</span></a></li>
 								</ul></li>
 						</ul></li>
@@ -553,7 +553,7 @@
 							</ul>
 						</div>
 						<div class="smart-widget-body">
-							<form action="student_showStudentById" method="post">
+							<form action="student_showStudentById?username=${param.username}&userToken=${param.userToken}" method="post">
 								<div class="form-group">
 									<label for="exampleInputEmail1">学生id</label> <input
 										type="text" class="form-control" id="exampleInputEmail1"
@@ -561,7 +561,7 @@
 								</div>
 								<!-- /form-group -->
 								<button type="submit" class="btn btn-success btn-sm">查询</button>
-								<a href="student_showStudentInfo" class="btn btn-success btn-sm">获取所有学生</a>							
+								<a href="student_showStudentInfo?username=${param.username}&userToken=${param.userToken}" class="btn btn-success btn-sm">获取所有学生</a>							
 							</form>
 						</div>
 					</div>
@@ -618,7 +618,7 @@
 									<tr style="background-color: #2baab1; color: white;">
 										<td>id</td>
 										<td>姓名</td>
-										<td>考试</td>
+										<td>考试阶段</td>
 										<td>注册时间</td>
 									</tr>
 									<s:iterator value="students" status="status">

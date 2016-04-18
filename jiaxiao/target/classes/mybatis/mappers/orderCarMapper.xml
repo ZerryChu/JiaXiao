@@ -23,9 +23,9 @@
 	</select>
 	
 	<insert id="addOrderCarInfo">
-	INSERT INTO order_car_inf
-	VALUES
-		(#{0}, #{1}, #{2}, #{3})
+		INSERT INTO order_car_inf
+		VALUES
+			(#{0}, #{1}, #{2}, #{3})
 	</insert>
 	
 </mapper>

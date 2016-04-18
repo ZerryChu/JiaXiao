@@ -23,6 +23,7 @@ public class UserAction  extends ActionSupport {
 	private static final long serialVersionUID = 1L;
 
 	private String username;
+	private String userToken;
 	private String password;
 	
 	@Autowired
@@ -30,26 +31,34 @@ public class UserAction  extends ActionSupport {
 	
 	public String login() {
 		if (true == userService.login(username, password)) {
+			// 成功登录
+			
 			UUID uuid = UUID.randomUUID();
-			String userToken = uuid.toString();
-			//add cookie
+			userToken = uuid.toString();
+			
+			/*   add cookie
 			Cookie cookie = new Cookie("userinfo", username + ',' + userToken);
 			cookie.setMaxAge(600);
 			cookie.setPath("/");
 			HttpServletResponse response =  ServletActionContext.getResponse();
 			response.addCookie(cookie);
+			*/
+			
 			//add session
 			Map<String, Object> session = ServletActionContext.getContext().getSession();
-			session.put("userToken", uuid.toString()); 
-			/*
-			Map<String, String> map = new HashMap<String, String>();
-			map.put("username", username);
-			map.put("userToken", userToken);
-			*/
+			session.put(username, userToken); 
 			return "success";
 		} else {
 			return "wrong";
 		}
+	}
+	
+	public String getUserToken() {
+		return userToken;
+	}
+
+	public void setUserToken(String userToken) {
+		this.userToken = userToken;
 	}
 	
 	public String getUsername() {

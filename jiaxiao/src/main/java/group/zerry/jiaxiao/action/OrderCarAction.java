@@ -28,6 +28,10 @@ import group.zerry.jiaxiao.service.OrderCarService;
 @Scope("prototype") 
 public class OrderCarAction extends ActionSupport {
 	
+	// 身份验证
+	private String      username;
+	private String      userToken;
+
 	private int    		car_id;
 	private int	   		stu_id;
 	private int    		coach_id;
@@ -178,6 +182,22 @@ public class OrderCarAction extends ActionSupport {
 
 	public void setCars(List<Car> cars) {
 		this.cars = cars;
+	}
+	
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getUserToken() {
+		return userToken;
+	}
+
+	public void setUserToken(String userToken) {
+		this.userToken = userToken;
 	}
 	
 }

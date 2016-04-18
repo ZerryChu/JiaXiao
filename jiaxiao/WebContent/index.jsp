@@ -204,7 +204,7 @@
 									<h5 class="no-m-bottom">Zirui Zhu</h5>
 									<div class="m-top-xs">
 										<a href="profile.html" class="m-right-sm">Profile</a> <a
-											href="signin.html">Log out</a>
+											href="signin.jsp">Log out</a>
 									</div>
 								</div></li>
 							<li><a href="inbox.html"> Inbox <span
@@ -379,17 +379,14 @@
 						</span> <span class="menu-content-hover block"> 教学 </span>
 					</a>
 						<ul class="submenu bg-palette4">
-							<li><a href="stu_info.jsp"><span
-									class="submenu-label">学员查询</span></a></li>
-							<li><a href="stu_reg.jsp"><span
-									class="submenu-label">新学员登记</span></a></li>
+							<li><a href="stu_info.jsp?username=${param.username}&userToken=${param.userToken}"><span class="submenu-label">学员查询</span></a></li>
+							<li><a href="stu_reg.jsp?username=${param.username}&userToken=${param.userToken}"><span class="submenu-label">新学员登记</span></a></li>
 							<li class="openable"><a href="#"><small
 									class="badge badge-success badge-square bounceIn animation-delay2 m-left-xs pull-right">2</small><span
 									class="submenu-label">练车管理</span></a>
 								<ul class="submenu third-level">
-									<li><a href="train_car.jsp"><span
-											class="submenu-label">练车记录查询</a></li>
-									<li><a href="car_plan.jsp"><span
+									<li><a href="car_plan.jsp?username=${param.username}&userToken=${param.userToken}"><span class="submenu-label">练车记录查询</a></li>
+									<li><a href="train_car.jsp?username=${param.username}&userToken=${param.userToken}"><span
 											class="submenu-label">练车安排</span></a></li>
 								</ul></li>
 							<li class="openable"><a href="#"> <small
@@ -397,9 +394,9 @@
 									<span class="submenu-label">考试管理</span>
 							</a>
 								<ul class="submenu third-level">
-									<li><a href="static_table.html"><span
+									<li><a href="test_query.jsp?username=${param.username}&userToken=${param.userToken}"><span
 											class="submenu-label">考试查询</a></li>
-									<li><a href="datatable.html"><span
+									<li><a href="test_plan.jsp?username=${param.username}&userToken=${param.userToken}"><span
 											class="submenu-label">考试安排</span></a></li>
 								</ul></li>
 						</ul></li>
@@ -523,14 +520,14 @@
 						<div class="btn-group">
 							<button type="button" class="btn btn-default dropdown-toggle"
 								data-toggle="dropdown">
-								Select Project <span class="caret"></span>
+								驾校活动 <span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu pull-right" role="menu">
-								<li><a href="#">Project1</a></li>
-								<li><a href="#">Project2</a></li>
-								<li><a href="#">Project3</a></li>
+								<li><a href="#">活动1</a></li>
+								<li><a href="#">活动2</a></li>
+								<li><a href="#">活动3</a></li>
 								<li class="divider"></li>
-								<li><a href="#">Setting</a></li>
+								<li><a href="#">设置</a></li>
 							</ul>
 						</div>
 
@@ -541,11 +538,11 @@
 				<div class="row m-top-md">
 					<div class="col-lg-3 col-sm-6">
 						<div class="statistic-box bg-danger m-bottom-md">
-							<div class="statistic-title">Today Visitors</div>
+							<div class="statistic-title">本周来访</div>
 
 							<div class="statistic-value">96.7k</div>
 
-							<div class="m-top-md">11% Higher than last week</div>
+							<div class="m-top-md">11% 高于上星期</div>
 
 							<div class="statistic-icon-background">
 								<i class="ion-eye"></i>
@@ -555,11 +552,11 @@
 
 					<div class="col-lg-3 col-sm-6">
 						<div class="statistic-box bg-info m-bottom-md">
-							<div class="statistic-title">Today Sales</div>
+							<div class="statistic-title">本周报考</div>
 
 							<div class="statistic-value">751</div>
 
-							<div class="m-top-md">8% Higher than last week</div>
+							<div class="m-top-md">8% 高于上星期</div>
 
 							<div class="statistic-icon-background">
 								<i class="ion-ios7-cart-outline"></i>
@@ -569,11 +566,11 @@
 
 					<div class="col-lg-3 col-sm-6">
 						<div class="statistic-box bg-purple m-bottom-md">
-							<div class="statistic-title">Today Users</div>
+							<div class="statistic-title">练车记录</div>
 
 							<div class="statistic-value">129</div>
 
-							<div class="m-top-md">3% Higher than last week</div>
+							<div class="m-top-md">3% 多于昨日</div>
 
 							<div class="statistic-icon-background">
 								<i class="ion-person-add"></i>
@@ -583,11 +580,11 @@
 
 					<div class="col-lg-3 col-sm-6">
 						<div class="statistic-box bg-success m-bottom-md">
-							<div class="statistic-title">Today Earnings</div>
+							<div class="statistic-title">本周成交额</div>
 
-							<div class="statistic-value">$124.45k</div>
+							<div class="statistic-value">￥124.45k</div>
 
-							<div class="m-top-md">7% Higher than last week</div>
+							<div class="m-top-md">7% 高于上周</div>
 
 							<div class="statistic-icon-background">
 								<i class="ion-stats-bars"></i>
@@ -600,7 +597,7 @@
 					<div class="col-lg-6">
 						<div class="smart-widget widget-dark-blue">
 							<div class="smart-widget-header">
-								TOTAL VISITS <span class="smart-widget-option"> <span
+								总共来访量 <span class="smart-widget-option"> <span
 									class="refresh-icon-animated"> <i
 										class="fa fa-circle-o-notch fa-spin"></i>
 								</span> <a href="#" class="widget-toggle-hidden-option"> <i
@@ -669,7 +666,7 @@
 					<div class="col-lg-6">
 						<div class="smart-widget widget-dark-blue">
 							<div class="smart-widget-header">
-								TOTAL SALES <span class="smart-widget-option"> <span
+								总共成交额 <span class="smart-widget-option"> <span
 									class="refresh-icon-animated"> <i
 										class="fa fa-circle-o-notch fa-spin"></i>
 								</span> <a href="#" class="widget-toggle-hidden-option"> <i
@@ -742,7 +739,7 @@
 							<div class="col-lg-6">
 								<div class="smart-widget">
 									<div class="smart-widget-header">
-										<i class="fa fa-calendar m-right-xs"></i>Calendar <span
+										<i class="fa fa-calendar m-right-xs"></i>日历 <span
 											class="smart-widget-option"> <span
 											class="refresh-icon-animated"> <i
 												class="fa fa-circle-o-notch fa-spin"></i>
@@ -797,453 +794,100 @@
 								</div>
 								<!-- ./smart-widget -->
 							</div>
-							<!-- ./col -->
-							<div class="col-lg-6">
-								<div class="smart-widget widget-purple">
-									<div class="smart-widget-header">
-										<i class="fa fa-comment"></i> Chat <span
-											class="smart-widget-option"> <span
-											class="refresh-icon-animated"> <i
-												class="fa fa-circle-o-notch fa-spin"></i>
-										</span> <a href="#" class="widget-toggle-hidden-option"> <i
-												class="fa fa-cog"></i>
-										</a> <a href="#" class="widget-collapse-option"
-											data-toggle="collapse"> <i class="fa fa-chevron-up"></i>
-										</a> <a href="#" class="widget-refresh-option"> <i
-												class="fa fa-refresh"></i>
-										</a> <a href="#" class="widget-remove-option"> <i
-												class="fa fa-times"></i>
-										</a>
-										</span>
-									</div>
-									<div class="smart-widget-inner">
-										<div class="smart-widget-hidden-section">
-											<ul class="widget-color-list clearfix">
-												<li style="background-color: #20232b;"
-													data-color="widget-dark"></li>
-												<li style="background-color: #4c5f70;"
-													data-color="widget-dark-blue"></li>
-												<li style="background-color: #23b7e5;"
-													data-color="widget-blue"></li>
-												<li style="background-color: #2baab1;"
-													data-color="widget-green"></li>
-												<li style="background-color: #edbc6c;"
-													data-color="widget-yellow"></li>
-												<li style="background-color: #fbc852;"
-													data-color="widget-orange"></li>
-												<li style="background-color: #e36159;"
-													data-color="widget-red"></li>
-												<li style="background-color: #7266ba;"
-													data-color="widget-purple"></li>
-												<li style="background-color: #f5f5f5;"
-													data-color="widget-light-grey"></li>
-												<li style="background-color: #fff;" data-color="reset"></li>
-											</ul>
-										</div>
-										<div class="smart-widget-body">
-											<div id="chatScroll">
-												<ul class="chat">
-													<li class="left clearfix"><span
-														class="chat-img pull-left"> <img
-															src="images/profile/profile2.jpg" alt="User Avatar">
-													</span>
-														<div class="chat-body clearfix">
-															<div class="header">
-																<strong class="primary-font">John Doe</strong> <small
-																	class="pull-right text-muted"><i
-																	class="fa fa-clock-o"></i> 12 mins ago</small>
-															</div>
-															<p>Lorem ipsum dolor sit amet, consectetur adipiscing
-																elit.</p>
-														</div></li>
-													<li class="right clearfix"><span
-														class="chat-img pull-right"> <img
-															src="images/profile/profile3.jpg" alt="User Avatar">
-													</span>
-														<div class="chat-body clearfix">
-															<div class="header">
-																<strong class="primary-font">Jane Doe</strong> <small
-																	class="pull-right text-muted"><i
-																	class="fa fa-clock-o"></i> 13 mins ago</small>
-															</div>
-															<p>Lorem ipsum dolor sit amet, consectetur adipiscing
-																elit. Curabitur bibendum ornare dolor, quis ullamcorper
-																ligula sodales at.</p>
-														</div></li>
-													<li class="left clearfix"><span
-														class="chat-img pull-left"> <img
-															src="images/profile/profile2.jpg" alt="User Avatar">
-													</span>
-														<div class="chat-body clearfix">
-															<div class="header">
-																<strong class="primary-font">John Doe</strong> <small
-																	class="pull-right text-muted"><i
-																	class="fa fa-clock-o"></i> 20 mins ago</small>
-															</div>
-															<p>Lorem ipsum dolor sit amet, consectetur adipiscing
-																elit.</p>
-														</div></li>
-													<li class="right clearfix"><span
-														class="chat-img pull-right"> <img
-															src="images/profile/profile3.jpg" alt="User Avatar">
-													</span>
-														<div class="chat-body clearfix">
-															<div class="header">
-																<strong class="primary-font">Jane Doe</strong> <small
-																	class="pull-right text-muted"><i
-																	class="fa fa-clock-o"></i> 25 mins ago</small>
-															</div>
-															<p>Lorem ipsum dolor sit amet, consectetur adipiscing
-																elit. Curabitur bibendum ornare dolor, quis ullamcorper
-																ligula sodales at.</p>
-														</div></li>
-												</ul>
+
+							<div class="row">
+								<div class="col-md-3">
+									<div class="panel panel-default weather-widget">
+										<div class="panel-body bg-success text-white">
+											<div class="h4 text-white text-center">Today Weather</div>
+
+											<div class="m-top-md m-bottom-md text-center">
+												<canvas id="skycon1" width="120" height="120"></canvas>
 											</div>
+
+											<div class="degree-text text-center">22°</div>
 										</div>
-										<div class="smart-widget-footer">
-											<div class="input-group">
-												<input id="btn-input" type="text"
-													class="form-control input-sm"
-													placeholder="type your message here..."> <span
-													class="input-group-btn">
-													<button class="btn btn-success btn-sm no-shadow"
-														id="btn-chat">Send</button>
-												</span>
+										<div class="panel-footer bg-white text-center padding-md">
+											<div class="h4 text-upper">
+												New York <i class="fa fa-map-marker"></i>
 											</div>
-											<!-- /input-group -->
+											<div class="text-muted font-12 m-top-xs">Rainy Day</div>
 										</div>
-										<!-- ./smart-widget-footer -->
 									</div>
-									<!-- ./smart-widget-inner -->
+									<!-- ./panel -->
 								</div>
-								<!-- ./smart-widget -->
-							</div>
-							<!-- ./col -->
-						</div>
-						<!-- ./row -->
+								<!-- ./col -->
+								<div class="col-md-3">
+									<div class="panel panel-default weather-widget">
+										<div class="panel-body bg-warning text-white">
+											<div class="h4 text-white text-center">Today Weather</div>
 
-						<div class="smart-widget">
-							<div class="smart-widget-header">
-								Website Statistic <span class="smart-widget-option"> <span
-									class="refresh-icon-animated"> <i
-										class="fa fa-circle-o-notch fa-spin"></i>
-								</span> <a href="#" class="widget-toggle-hidden-option"> <i
-										class="fa fa-cog"></i>
-								</a> <a href="#" class="widget-collapse-option"
-									data-toggle="collapse"> <i class="fa fa-chevron-up"></i>
-								</a> <a href="#" class="widget-refresh-option"> <i
-										class="fa fa-refresh"></i>
-								</a> <a href="#" class="widget-remove-option"> <i
-										class="fa fa-times"></i>
-								</a>
-								</span>
-							</div>
-							<div class="smart-widget-inner table-responsive">
-								<div class="smart-widget-hidden-section">
-									<ul class="widget-color-list clearfix">
-										<li style="background-color: #20232b;"
-											data-color="widget-dark"></li>
-										<li style="background-color: #4c5f70;"
-											data-color="widget-dark-blue"></li>
-										<li style="background-color: #23b7e5;"
-											data-color="widget-blue"></li>
-										<li style="background-color: #2baab1;"
-											data-color="widget-green"></li>
-										<li style="background-color: #edbc6c;"
-											data-color="widget-yellow"></li>
-										<li style="background-color: #fbc852;"
-											data-color="widget-orange"></li>
-										<li style="background-color: #e36159;" data-color="widget-red"></li>
-										<li style="background-color: #7266ba;"
-											data-color="widget-purple"></li>
-										<li style="background-color: #f5f5f5;"
-											data-color="widget-light-grey"></li>
-										<li style="background-color: #fff;" data-color="reset"></li>
-									</ul>
-								</div>
-								<table class="table table-striped no-margin">
-									<thead>
-										<tr>
-											<th class="text-right">Date</th>
-											<th class="text-right">Database Usage</th>
-											<th class="text-right">CPU Usage</th>
-											<th class="text-right">Memory Usage</th>
-											<th class="text-right">Total Disk Usage</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td class="text-right">July, 11</td>
-											<td class="text-right">31.05%</td>
-											<td class="text-right">65.12%</td>
-											<td class="text-right">86.41%</td>
-											<td class="text-right">
-												<div class="progress progress-sm inline-block m-bottom-none"
-													style="width: 100px; margin-top: 6px">
-													<div class="progress-bar progress-bar-success"
-														style="width: 54.41%;">
-														<span class="sr-only">54.41% Complete</span>
-													</div>
-												</div> <span class="m-left-sm vertical-top">54.41%</span>
-											</td>
-										</tr>
-										<tr>
-											<td class="text-right">July, 12</td>
-											<td class="text-right">48.99%</td>
-											<td class="text-right">72.31%</td>
-											<td class="text-right">74.21%</td>
-											<td class="text-right">
-												<div class="progress progress-sm inline-block m-bottom-none"
-													style="width: 100px; margin-top: 6px">
-													<div class="progress-bar progress-bar-warning"
-														style="width: 69.92%;">
-														<span class="sr-only">69.92% Complete</span>
-													</div>
-												</div> <span class="m-left-sm vertical-top">69.92%</span>
-											</td>
-										</tr>
-										<tr>
-											<td class="text-right">July, 13</td>
-											<td class="text-right">13.68%</td>
-											<td class="text-right">32.31%</td>
-											<td class="text-right">50.82%</td>
-											<td class="text-right">
-												<div class="progress progress-sm inline-block m-bottom-none"
-													style="width: 100px; margin-top: 6px">
-													<div class="progress-bar progress-bar-danger"
-														style="width: 43.17%;">
-														<span class="sr-only">43.17% Complete</span>
-													</div>
-												</div> <span class="m-left-sm vertical-top">43.17%</span>
-											</td>
-										</tr>
-										<tr>
-											<td class="text-right">July, 14</td>
-											<td class="text-right">9.23%</td>
-											<td class="text-right">11.91%</td>
-											<td class="text-right">10.21%</td>
-											<td class="text-right">
-												<div class="progress progress-sm inline-block m-bottom-none"
-													style="width: 100px; margin-top: 6px">
-													<div class="progress-bar progress-bar-success"
-														style="width: 12.11%;">
-														<span class="sr-only">12.11% Complete</span>
-													</div>
-												</div> <span class="m-left-sm vertical-top">12.11%</span>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<!-- ./smart-widget-inner -->
-						</div>
-						<!-- ./smart-widget -->
-					</div>
-					<!-- ./col -->
-					<div class="col-lg-4">
-						<div class="smart-widget">
-							<div class="smart-widget-header">
-								<span class="badge badge-danger pull-right">10</span> To Do List
-							</div>
-							<div class="smart-widget-inner">
-								<div class="smart-widget-body clearfix">
-									<div class="search-input pull-left">
-										<input type="text" class="form-control input-sm"> <a
-											href="#" class="input-icon text-normal"><i
-											class="ion-ios7-search-strong"></i></a>
+											<div class="m-top-md m-bottom-md text-center">
+												<canvas id="skycon2" width="120" height="120"></canvas>
+											</div>
+
+											<div class="degree-text text-center">37°</div>
+										</div>
+										<div class="panel-footer bg-white text-center padding-md">
+											<div class="h4 text-upper">
+												London <i class="fa fa-map-marker"></i>
+											</div>
+											<div class="text-muted font-12 m-top-xs">Cloudy Day</div>
+										</div>
 									</div>
-									<a class="btn btn-success btn-sm pull-right"><i
-										class="fa fa-plus"></i> Add Task</a>
+									<!-- ./panel -->
 								</div>
-								<ul class="list-group to-do-list sortable-list no-border">
-									<li class="list-group-item" draggable="true">
-										<div class="custom-checkbox todo-checkbox">
-											<input type="checkbox" value="None" id="todo-check1">
-											<label for="todo-check1"></label>
-										</div> SEO Optimisation
-										<div class="remove-list">
-											<i class="ion-close"></i>
+								<!-- ./col -->
+								<div class="col-md-3">
+									<div class="panel panel-default weather-widget">
+										<div class="panel-body bg-danger text-white">
+											<div class="h4 text-white text-center">Today Weather</div>
+
+											<div class="m-top-md m-bottom-md text-center">
+												<canvas id="skycon3" width="120" height="120"></canvas>
+											</div>
+
+											<div class="degree-text text-center">21°</div>
 										</div>
-									</li>
-									<li class="list-group-item" draggable="true">
-										<div class="custom-checkbox todo-checkbox">
-											<input type="checkbox" id="todo-check2"> <label
-												for="todo-check2"></label>
-										</div> Unit Testing
-										<div class="remove-list">
-											<i class="ion-close"></i>
+										<div class="panel-footer bg-white text-center padding-md">
+											<div class="h4 text-upper">
+												Bangkok <i class="fa fa-map-marker"></i>
+											</div>
+											<div class="text-muted font-12 m-top-xs">Wind</div>
 										</div>
-									</li>
-									<li class="list-group-item" draggable="true">
-										<div class="custom-checkbox todo-checkbox">
-											<input type="checkbox" id="todo-check3"> <label
-												for="todo-check3"></label>
-										</div> Mobile Development
-										<div class="remove-list">
-											<i class="ion-close"></i>
-										</div>
-									</li>
-									<li class="list-group-item" draggable="true">
-										<div class="custom-checkbox todo-checkbox">
-											<input type="checkbox" id="todo-check4"> <label
-												for="todo-check4"></label>
-										</div> Database Migration
-										<div class="remove-list">
-											<i class="ion-close"></i>
-										</div>
-									</li>
-									<li class="list-group-item" draggable="true">
-										<div class="custom-checkbox todo-checkbox">
-											<input type="checkbox" id="todo-check5"> <label
-												for="todo-check5"></label>
-										</div> New Frontend Layout
-										<div class="remove-list">
-											<i class="ion-close"></i>
-										</div>
-									</li>
-									<li class="list-group-item" draggable="true">
-										<div class="custom-checkbox todo-checkbox">
-											<input type="checkbox" id="todo-check6"> <label
-												for="todo-check6"></label>
-										</div> Bug Fixes
-										<div class="remove-list">
-											<i class="ion-close"></i>
-										</div>
-									</li>
-								</ul>
-							</div>
-							<!-- ./smart-widget-inner -->
-						</div>
-						<!-- ./smart-widget -->
-						<div class="task-widget">
-							<div class="task-widget-body clearfix">
-								<div class="pie-chart-wrapper">
-									<div class="chart task-pie-chart line-normal" data-percent="73">
-										<h1 class="m-top-lg m-bottom-none">73</h1>
-										<div>Percent</div>
 									</div>
+									<!-- ./panel -->
 								</div>
-								<div class="widget-detail">
-									<small class="text-upper text-muted block font-sm">Task
-										Completed</small>
-									<h1 class="no-margin">4312</h1>
+								<!-- ./col -->
+								<div class="col-md-3">
+									<div class="panel panel-default weather-widget">
+										<div class="panel-body bg-info text-white">
+											<div class="h4 text-white text-center">Today Weather</div>
+
+											<div class="m-top-md m-bottom-md text-center">
+												<canvas id="skycon4" width="120" height="120"></canvas>
+											</div>
+
+											<div class="degree-text text-center">14°</div>
+										</div>
+										<div class="panel-footer bg-white text-center padding-md">
+											<div class="h4 text-upper">
+												Tokyo <i class="fa fa-map-marker"></i>
+											</div>
+											<div class="text-muted font-12 m-top-xs">Clear Day</div>
+										</div>
+									</div>
+									<!-- ./panel -->
 								</div>
-							</div>
-							<!-- ./task-widget-body -->
-							<div class="task-widget-statatistic">
-								<ul class="clearfix">
-									<li class="bg-grey border-success">
-										<div class="text-muted text-upper font-sm">Remaining</div>
-										2311
-									</li>
-									<li class="bg-grey border-danger">
-										<div class="text-muted text-upper font-sm">In Progress</div>
-										3212
-									</li>
-									<li class="bg-grey border-purple">
-										<div class="text-muted text-upper font-sm">Budget</div> $17.1M
-									</li>
-								</ul>
-								<!-- ./row -->
+								<!-- ./col -->
 							</div>
 						</div>
-						<!-- ./task-widget -->
+						<!-- ./padding-md -->
 					</div>
-					<!-- ./col -->
-				</div>
-				<!-- ./row -->
-
-				<div class="row">
-					<div class="col-md-3">
-						<div class="panel panel-default weather-widget">
-							<div class="panel-body bg-success text-white">
-								<div class="h4 text-white text-center">Today Weather</div>
-
-								<div class="m-top-md m-bottom-md text-center">
-									<canvas id="skycon1" width="120" height="120"></canvas>
-								</div>
-
-								<div class="degree-text text-center">22°</div>
-							</div>
-							<div class="panel-footer bg-white text-center padding-md">
-								<div class="h4 text-upper">
-									New York <i class="fa fa-map-marker"></i>
-								</div>
-								<div class="text-muted font-12 m-top-xs">Rainy Day</div>
-							</div>
-						</div>
-						<!-- ./panel -->
-					</div>
-					<!-- ./col -->
-					<div class="col-md-3">
-						<div class="panel panel-default weather-widget">
-							<div class="panel-body bg-warning text-white">
-								<div class="h4 text-white text-center">Today Weather</div>
-
-								<div class="m-top-md m-bottom-md text-center">
-									<canvas id="skycon2" width="120" height="120"></canvas>
-								</div>
-
-								<div class="degree-text text-center">37°</div>
-							</div>
-							<div class="panel-footer bg-white text-center padding-md">
-								<div class="h4 text-upper">
-									London <i class="fa fa-map-marker"></i>
-								</div>
-								<div class="text-muted font-12 m-top-xs">Cloudy Day</div>
-							</div>
-						</div>
-						<!-- ./panel -->
-					</div>
-					<!-- ./col -->
-					<div class="col-md-3">
-						<div class="panel panel-default weather-widget">
-							<div class="panel-body bg-danger text-white">
-								<div class="h4 text-white text-center">Today Weather</div>
-
-								<div class="m-top-md m-bottom-md text-center">
-									<canvas id="skycon3" width="120" height="120"></canvas>
-								</div>
-
-								<div class="degree-text text-center">21°</div>
-							</div>
-							<div class="panel-footer bg-white text-center padding-md">
-								<div class="h4 text-upper">
-									Bangkok <i class="fa fa-map-marker"></i>
-								</div>
-								<div class="text-muted font-12 m-top-xs">Wind</div>
-							</div>
-						</div>
-						<!-- ./panel -->
-					</div>
-					<!-- ./col -->
-					<div class="col-md-3">
-						<div class="panel panel-default weather-widget">
-							<div class="panel-body bg-info text-white">
-								<div class="h4 text-white text-center">Today Weather</div>
-
-								<div class="m-top-md m-bottom-md text-center">
-									<canvas id="skycon4" width="120" height="120"></canvas>
-								</div>
-
-								<div class="degree-text text-center">14°</div>
-							</div>
-							<div class="panel-footer bg-white text-center padding-md">
-								<div class="h4 text-upper">
-									Tokyo <i class="fa fa-map-marker"></i>
-								</div>
-								<div class="text-muted font-12 m-top-xs">Clear Day</div>
-							</div>
-						</div>
-						<!-- ./panel -->
-					</div>
-					<!-- ./col -->
+					<!-- /main-container -->
 				</div>
 			</div>
-			<!-- ./padding-md -->
 		</div>
-		<!-- /main-container -->
-
 		<footer class="footer"> <span class="footer-brand"> <strong
 			class="text-danger">驾校</strong> 管理系统
 		</span>
@@ -1251,118 +895,123 @@
 			&copy; 2016 <strong>Group Zerry</strong>. ALL Rights Reserved.
 		</p>
 		</footer>
-	</div>
-	<!-- /wrapper -->
 
-	<a href="#" class="scroll-to-top hidden-print"><i
-		class="fa fa-chevron-up fa-lg"></i></a>
+		<!-- /wrapper -->
 
-	<!-- Delete Widget Confirmation -->
-	<div class="custom-popup delete-widget-popup delete-confirmation-popup"
-		id="deleteWidgetConfirm">
-		<div class="popup-header text-center">
-			<span class="fa-stack fa-4x"> <i
-				class="fa fa-circle fa-stack-2x"></i> <i
-				class="fa fa-lock fa-stack-1x fa-inverse"></i>
-			</span>
-		</div>
-		<div class="popup-body text-center">
-			<h5>Are you sure to delete this widget?</h5>
-			<strong class="block m-top-xs"><i
-				class="fa fa-exclamation-circle m-right-xs text-danger"></i>This
-				action cannot be undone</strong>
+		<a href="#" class="scroll-to-top hidden-print"><i
+			class="fa fa-chevron-up fa-lg"></i></a>
 
-			<div class="text-center m-top-lg">
-				<a class="btn btn-success m-right-sm remove-widget-btn">Delete</a> <a
-					class="btn btn-default deleteWidgetConfirm_close">Cancel</a>
+		<!-- Delete Widget Confirmation -->
+		<div
+			class="custom-popup delete-widget-popup delete-confirmation-popup"
+			id="deleteWidgetConfirm">
+			<div class="popup-header text-center">
+				<span class="fa-stack fa-4x"> <i
+					class="fa fa-circle fa-stack-2x"></i> <i
+					class="fa fa-lock fa-stack-1x fa-inverse"></i>
+				</span>
+			</div>
+			<div class="popup-body text-center">
+				<h5>Are you sure to delete this widget?</h5>
+				<strong class="block m-top-xs"><i
+					class="fa fa-exclamation-circle m-right-xs text-danger"></i>This
+					action cannot be undone</strong>
+
+				<div class="text-center m-top-lg">
+					<a class="btn btn-success m-right-sm remove-widget-btn">Delete</a>
+					<a class="btn btn-default deleteWidgetConfirm_close">Cancel</a>
+				</div>
 			</div>
 		</div>
-	</div>
 
 
-	<!-- Le javascript
+		<!-- Le javascript
 	    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
+		<!-- Placed at the end of the document so the pages load faster -->
 
-	<!-- Jquery -->
-	<script src="js/jquery-1.11.1.min.js"></script>
+		<!-- Jquery -->
+		<script src="js/jquery-1.11.1.min.js"></script>
 
-	<!-- Bootstrap -->
-	<script src="bootstrap/js/bootstrap.min.js"></script>
+		<!-- Bootstrap -->
+		<script src="bootstrap/js/bootstrap.min.js"></script>
 
-	<!-- Flot -->
-	<script src='js/jquery.flot.min.js'></script>
+		<!-- Flot -->
+		<script src='js/jquery.flot.min.js'></script>
 
-	<!-- Slimscroll -->
-	<script src='js/jquery.slimscroll.min.js'></script>
+		<!-- Slimscroll -->
+		<script src='js/jquery.slimscroll.min.js'></script>
 
-	<!-- Morris -->
-	<script src='js/rapheal.min.js'></script>
-	<script src='js/morris.min.js'></script>
+		<!-- Morris -->
+		<script src='js/rapheal.min.js'></script>
+		<script src='js/morris.min.js'></script>
 
-	<!-- Datepicker -->
-	<script src='js/uncompressed/datepicker.js'></script>
+		<!-- Datepicker -->
+		<script src='js/uncompressed/datepicker.js'></script>
 
-	<!-- Sparkline -->
-	<script src='js/sparkline.min.js'></script>
+		<!-- Sparkline -->
+		<script src='js/sparkline.min.js'></script>
 
-	<!-- Skycons -->
-	<script src='js/uncompressed/skycons.js'></script>
+		<!-- Skycons -->
+		<script src='js/uncompressed/skycons.js'></script>
 
-	<!-- Popup Overlay -->
-	<script src='js/jquery.popupoverlay.min.js'></script>
+		<!-- Popup Overlay -->
+		<script src='js/jquery.popupoverlay.min.js'></script>
 
-	<!-- Easy Pie Chart -->
-	<script src='js/jquery.easypiechart.min.js'></script>
+		<!-- Easy Pie Chart -->
+		<script src='js/jquery.easypiechart.min.js'></script>
 
-	<!-- Sortable -->
-	<script src='js/uncompressed/jquery.sortable.js'></script>
+		<!-- Sortable -->
+		<script src='js/uncompressed/jquery.sortable.js'></script>
 
-	<!-- Owl Carousel -->
-	<script src='js/owl.carousel.min.js'></script>
+		<!-- Owl Carousel -->
+		<script src='js/owl.carousel.min.js'></script>
 
-	<!-- Modernizr -->
-	<script src='js/modernizr.min.js'></script>
+		<!-- Modernizr -->
+		<script src='js/modernizr.min.js'></script>
 
-	<!-- Simplify -->
-	<script src="js/simplify/simplify.js"></script>
-	<script src="js/simplify/simplify_dashboard.js"></script>
+		<!-- Simplify -->
+		<script src="js/simplify/simplify.js"></script>
+		<script src="js/simplify/simplify_dashboard.js"></script>
 
 
-	<script>
-		$(function() {
-			$('.chart').easyPieChart({
-				easing : 'easeOutBounce',
-				size : '140',
-				lineWidth : '7',
-				barColor : '#7266ba',
-				onStep : function(from, to, percent) {
-					$(this.el).find('.percent').text(Math.round(percent));
-				}
-			});
+		<script>
+					$(function() {
+						$('.chart').easyPieChart(
+								{
+									easing : 'easeOutBounce',
+									size : '140',
+									lineWidth : '7',
+									barColor : '#7266ba',
+									onStep : function(from, to, percent) {
+										$(this.el).find('.percent').text(
+												Math.round(percent));
+									}
+								});
 
-			$('.sortable-list').sortable();
+						$('.sortable-list').sortable();
 
-			$('.todo-checkbox').click(function() {
+						$('.todo-checkbox').click(
+								function() {
 
-				var _activeCheckbox = $(this).find('input[type="checkbox"]');
+									var _activeCheckbox = $(this).find(
+											'input[type="checkbox"]');
 
-				if (_activeCheckbox.is(':checked')) {
-					$(this).parent().addClass('selected');
-				} else {
-					$(this).parent().removeClass('selected');
-				}
+									if (_activeCheckbox.is(':checked')) {
+										$(this).parent().addClass('selected');
+									} else {
+										$(this).parent()
+												.removeClass('selected');
+									}
 
-			});
+								});
 
-			//Delete Widget Confirmation
-			$('#deleteWidgetConfirm').popup({
-				vertical : 'top',
-				pagecontainer : '.container',
-				transition : 'all 0.3s'
-			});
-		});
-	</script>
-
+						//Delete Widget Confirmation
+						$('#deleteWidgetConfirm').popup({
+							vertical : 'top',
+							pagecontainer : '.container',
+							transition : 'all 0.3s'
+						});
+					});
+				</script>
 </body>
 </html>

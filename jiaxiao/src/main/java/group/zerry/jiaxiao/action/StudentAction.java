@@ -31,6 +31,9 @@ import group.zerry.jiaxiao.service.StudentService;
 public class StudentAction extends ActionSupport {
 	
 	private static final long serialVersionUID = 1L;
+	// 身份验证
+	private String        username;
+	private String        userToken;
 	
 	private Student       student;
 	private int           query_id; // student id
@@ -44,7 +47,8 @@ public class StudentAction extends ActionSupport {
 		try {
 			result = studentService.register(student);
 		} catch(Exception e) {
-			//
+			// 
+			e.printStackTrace();
 			return "error";
 		}
 		
@@ -142,6 +146,22 @@ public class StudentAction extends ActionSupport {
 
 	public void setStudents(List<Student> students) {
 		this.students = students;
+	}
+	
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getUserToken() {
+		return userToken;
+	}
+
+	public void setUserToken(String userToken) {
+		this.userToken = userToken;
 	}
 	
 

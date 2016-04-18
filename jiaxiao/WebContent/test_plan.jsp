@@ -381,15 +381,21 @@
 						</span> <span class="menu-content-hover block"> 教学 </span>
 					</a>
 						<ul class="submenu bg-palette4">
-							<li><a href="stu_info.jsp?username=${param.username}&userToken=${param.userToken}"><span class="submenu-label">学员查询</span></a></li>
-							<li><a href="stu_reg.jsp?username=${param.username}&userToken=${param.userToken}"><span class="submenu-label">新学员登记</span></a></li>
+							<li><a
+								href="stu_info.jsp?username=${param.username}&userToken=${param.userToken}"><span
+									class="submenu-label">学员查询</span></a></li>
+							<li><a
+								href="stu_reg.jsp?username=${param.username}&userToken=${param.userToken}"><span
+									class="submenu-label">新学员登记</span></a></li>
 							<li class="openable"><a href="#"><small
 									class="badge badge-success badge-square bounceIn animation-delay2 m-left-xs pull-right">2</small><span
 									class="submenu-label">练车管理</span></a>
 								<ul class="submenu third-level">
-									<li><a href="car_plan.jsp?username=${param.username}&userToken=${param.userToken}"><span
+									<li><a
+										href="car_plan.jsp?username=${param.username}&userToken=${param.userToken}"><span
 											class="submenu-label">练车记录查询</a></li>
-									<li><a href="train_car.jsp?username=${param.username}&userToken=${param.userToken}"><span
+									<li><a
+										href="train_car.jsp?username=${param.username}&userToken=${param.userToken}"><span
 											class="submenu-label">练车安排</span></a></li>
 								</ul></li>
 							<li class="openable"><a href="#"> <small
@@ -397,9 +403,11 @@
 									<span class="submenu-label">考试管理</span>
 							</a>
 								<ul class="submenu third-level">
-									<li><a href="test_query.jsp?username=${param.username}&userToken=${param.userToken}"><span
+									<li><a
+										href="test_query.jsp?username=${param.username}&userToken=${param.userToken}"><span
 											class="submenu-label">考试查询</a></li>
-									<li><a href="test_plan.jsp?username=${param.username}&userToken=${param.userToken}"><span
+									<li><a
+										href="test_plan.jsp?username=${param.username}&userToken=${param.userToken}"><span
 											class="submenu-label">考试安排</span></a></li>
 								</ul></li>
 						</ul></li>
@@ -508,15 +516,14 @@
 			</div>
 		</div>
 		<!-- sidebar-inner --> </aside>
-
 		<div class="main-container">
 			<div class="padding-md">
 				<h2 class="header-text">
-					练车安排 <span class="sub-header"> orderCar info </span>
+					学员报考 <span class="sub-header"> register for examination </span>
 				</h2>
 				<div class="smart-widget m-top-lg widget-dark-blue">
 					<div class="smart-widget-header">
-						日期选择 <span class="smart-widget-option"> <span
+						学员登记 <span class="smart-widget-option"> <span
 							class="refresh-icon-animated"> <i
 								class="fa fa-circle-o-notch fa-spin"></i>
 						</span> <a href="#" class="widget-toggle-hidden-option"> <i
@@ -551,21 +558,16 @@
 							</ul>
 						</div>
 						<div class="smart-widget-body">
-							<form action="orderCar_show?username=${param.username}&userToken=${param.userToken}" method="post">
-								<!--  
+							<form
+								action="orderTest_showTest?username=${param.username}&userToken=${param.userToken}"
+								method="post">
 								<div class="form-group">
-									<label for="exampleInputEmail1">学生id</label> <input
-										type="text" class="form-control" id="exampleInputEmail1"
-										placeholder="id" name="query_id">
-								</div>
-								-->
-								<div class="form-group">
-									<label for="exampleInputEmail1">练车时间</label> <input type="date"
-										class="form-control" id="exampleInputEmail1"
-										placeholder="YYYY/MM/DD" name="date">
+									<label for="exampleInputEmail1">学生id</label> <input type="text"
+										class="form-control" id="exampleInputPassword1"
+										placeholder="id" name="stu_id">
 								</div>
 								<!-- /form-group -->
-								<button type="submit" class="btn btn-success btn-sm">查询当天空闲教练和车辆</button>
+								<button type="submit" class="btn btn-success btn-sm">提交</button>
 							</form>
 						</div>
 					</div>
@@ -581,7 +583,7 @@
 			<div class="padding-md">
 				<div class="smart-widget m-top-lg widget-dark-blue">
 					<div class="smart-widget-header">
-						选教练 <span class="smart-widget-option"> <span
+						结果 <span class="smart-widget-option"> <span
 							class="refresh-icon-animated"> <i
 								class="fa fa-circle-o-notch fa-spin"></i>
 						</span> <a href="#" class="widget-toggle-hidden-option"> <i
@@ -615,64 +617,38 @@
 								<li style="background-color: #fff;" data-color="reset"></li>
 							</ul>
 						</div>
-						<div class="smart-widget-body">
-							<form action="orderCar_registerForCar?username=${param.username}&userToken=${param.userToken}" method="post">
+						<form action="orderTest_registerForTest" method="post">
+							<div class="smart-widget-body">
 								<div class="form-group">
-									<label for="exampleInputEmail1">练车时间: <s:property value="date" /></label>
-									<input type="hidden" value="<s:property value="date" />"
-										name="date">
-								</div>
-
-								<div class="form-group">
-									<label for="exampleInputEmail1">报名学生id</label> <input
-										type="text" class="form-control" id="exampleInputEmail1"
-										placeholder="id" name="stu_id">
-								</div>
-
-								<table border="0"
-									style="text-align: center; height: 30px; margin-bottom: 30px; width: 100%;">
-									<s:if test="coachs[0]!=null">
+									<div class="form-group">
+										<label for="exampleInputEmail1">学生id: <s:property
+												value="stu_id" /></label> <input type="hidden"
+											value="<s:property value="stu_id" />" name="stu_id">
+									</div>
+									<label for="exampleInputEmail1">近期考试信息</label>
+									<table border="0"
+										style="text-align: center; height: 30px; margin-bottom: 30px; width: 100%;">
 										<tr style="background-color: #2baab1; color: white;">
-											<td colspan="4">空闲教练</td>
+											<td>id</td>
+											<td>考试</td>
+											<td>开始时间</td>
+											<td>选定</td>
 										</tr>
-									</s:if>
-									<tr>
-										<s:iterator value="coachs" status="status">
-											<!-- 做分页，优秀教练排序靠前 -->
-											<td><div>
-													<img style="width: 100px; margin: 30px;"
-														src="pic/<s:property value="coachs[#status.index].pic"/>.jpg"></img></br>
-													<input style="" type="radio" name="coach_id"
-														value="<s:property value="coachs[#status.index].id"/>">
-													<s:property value="coachs[#status.index].name" />
-												</div></td>
+										<s:iterator value="tests" status="status">
+											<tr
+												<s:if test="#status.odd">style="background-color: #f5f5f5;"</s:if>>
+												<td><s:property value="tests[#status.index].id" /></td>
+												<td><s:property value="tests[#status.index].state" /></td>
+												<td><s:property value="tests[#status.index].start_time" /></td>
+												<td><input type="radio" name="id"
+													value="<s:property value="tests[#status.index].start_time"/>" /></td>
+											</tr>
 										</s:iterator>
-									</tr>
-								</table>
-
-								<table border="0"
-									style="text-align: center; height: 30px; margin-bottom: 30px; width: 100%;">
-									<s:if test="cars[0]!=null">
-										<tr style="background-color: #2baab1; color: white;">
-											<td colspan="4">空闲车辆</td>
-										</tr>
-									</s:if>
-									<s:iterator value="cars" status="status">
-										<!-- 做分页 -->
-										<tr>
-											<td><div>
-													<input type="radio" name="car_id"
-														value="<s:property value="cars[#status.index].id"/>">
-													<s:property value="cars[#status.index].car_number" />
-													<s:property value="cars[#status.index].car_type" />
-												</div></td>
-										</tr>
-									</s:iterator>
-								</table>
-
-								<button type="submit" class="btn btn-success btn-sm">登记</button>
-							</form>
-						</div>
+									</table>		
+									<button type="submit" class="btn btn-success btn-sm">提交</button>						
+								</div>
+							</div>
+						</form>
 					</div>
 					<!-- ./smart-widget-inner -->
 				</div>
@@ -777,6 +753,8 @@
 				transition : 'all 0.3s'
 			});
 		});
+	
+		
 	</script>
 
 </body>

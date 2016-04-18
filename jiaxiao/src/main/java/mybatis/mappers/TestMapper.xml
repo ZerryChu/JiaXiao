@@ -12,5 +12,14 @@
 		WHERE
 		    id = #{0}
 	</select>
+	
+	<select id="showTest" resultType="Test">
+		SELECT
+			*
+		FROM
+			test_inf
+		WHERE
+			start_time > now()
+	</select>
 
 </mapper>

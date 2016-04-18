@@ -206,7 +206,7 @@
 									<h5 class="no-m-bottom">Zirui Zhu</h5>
 									<div class="m-top-xs">
 										<a href="profile.html" class="m-right-sm">Profile</a> <a
-											href="signin.html">Log out</a>
+											href="signin.jsp">Log out</a>
 									</div>
 								</div></li>
 							<li><a href="inbox.html"> Inbox <span
@@ -381,15 +381,15 @@
 						</span> <span class="menu-content-hover block"> 教学 </span>
 					</a>
 						<ul class="submenu bg-palette4">
-							<li><a href="stu_info.jsp"><span class="submenu-label">学员查询</span></a></li>
-							<li><a href="stu_reg.jsp"><span class="submenu-label">新学员登记</span></a></li>
+							<li><a href="stu_info.jsp?username=${param.username}&userToken=${param.userToken}"><span class="submenu-label">学员查询</span></a></li>
+							<li><a href="stu_reg.jsp?username=${param.username}&userToken=${param.userToken}"><span class="submenu-label">新学员登记</span></a></li>
 							<li class="openable"><a href="#"><small
 									class="badge badge-success badge-square bounceIn animation-delay2 m-left-xs pull-right">2</small><span
 									class="submenu-label">练车管理</span></a>
 								<ul class="submenu third-level">
-									<li><a href="train_car.jsp"><span
+									<li><a href="car_plan.jsp?username=${param.username}&userToken=${param.userToken}"><span
 											class="submenu-label">练车记录查询</a></li>
-									<li><a href="car_plan.jsp"><span
+									<li><a href="train_car.jsp?username=${param.username}&userToken=${param.userToken}"><span
 											class="submenu-label">练车安排</span></a></li>
 								</ul></li>
 							<li class="openable"><a href="#"> <small
@@ -397,9 +397,9 @@
 									<span class="submenu-label">考试管理</span>
 							</a>
 								<ul class="submenu third-level">
-									<li><a href="static_table.html"><span
+									<li><a href="test_query.jsp?username=${param.username}&userToken=${param.userToken}"><span
 											class="submenu-label">考试查询</a></li>
-									<li><a href="datatable.html"><span
+									<li><a href="test_plan.jsp?username=${param.username}&userToken=${param.userToken}"><span
 											class="submenu-label">考试安排</span></a></li>
 								</ul></li>
 						</ul></li>
@@ -551,7 +551,7 @@
 							</ul>
 						</div>
 						<div class="smart-widget-body">
-							<form action="orderCar_showInfo" method="post">
+							<form action="orderCar_showInfo?username=${param.username}&userToken=${param.userToken}" method="post">
 								<!--  
 								<div class="form-group">
 									<label for="exampleInputEmail1">学生id</label> <input

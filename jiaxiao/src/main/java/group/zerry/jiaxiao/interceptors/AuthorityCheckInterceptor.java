@@ -14,7 +14,7 @@ import com.opensymphony.xwork2.interceptor.MethodFilterInterceptor;
  * @content 检查用户操作权限
  *
  */
-public class CheckAuthority extends MethodFilterInterceptor {
+public class AuthorityCheckInterceptor extends MethodFilterInterceptor {
 
 	@Override
 	protected String doIntercept(ActionInvocation invocation) throws Exception {
@@ -24,10 +24,10 @@ public class CheckAuthority extends MethodFilterInterceptor {
 		String username = request.getParameter("username");
 		String userToken = request.getParameter("userToken");
 		HttpSession httpSession = request.getSession();
-		//if (httpSession.getAttribute(username).equals(userToken))
+		if (null != httpSession.getAttribute(username) && httpSession.getAttribute(username).equals(userToken))
 			return invocation.invoke(); 
-		//else
-			//return "noAuthority";
+		else
+			return "noAuthority";
 	}
 	
 
