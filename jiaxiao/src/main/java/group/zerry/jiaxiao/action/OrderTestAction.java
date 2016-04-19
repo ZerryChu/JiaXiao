@@ -27,15 +27,16 @@ public class OrderTestAction extends ActionSupport {
 	private static final long serialVersionUID = 1L;
 
 	// 身份验证
-	private String username;
-	private String userToken;
+	private String 			username;
+	private String		    userToken;
 
-	private int    stu_id;
-	private int    test_id;
-	private String state;
-	private String date;
-	private List<Test> tests;
-	private List<OrderTestInfo> infos;
+	private int  	        stu_id;
+	private int    			test_id;
+	private String		    state;
+	private String 			date;
+	private Test[]          tests;
+	private List<Test>      testList;
+	private OrderTestInfo[] infos;
 
 	@Autowired
 	private OrderTestService orderTestService;
@@ -43,25 +44,22 @@ public class OrderTestAction extends ActionSupport {
 	@Autowired
 	private StudentService studentService;
 
-	public String registerForTest() {
-		if (orderTestService.registerForTest(stu_id, test_id, date)) {
-			return "add_success";
-		} else {
-			return "wrong";
-		}
-	}
-
 	public String showInfoByStuId() {
-		infos = new ArrayList<>();
-		OrderTestInfo[] info = orderTestService.showInfoByStuId(stu_id);
-		for (int i = 0; i < info.length; i++)
-			infos.add(info[i]);
+		infos = orderTestService.showInfoByStuId(stu_id);
 		return "query_success";
 	}
 
+	public String registerForTest() {
+		if (orderTestService.registerForTest(stu_id, test_id)) {
+			return "add_success";
+		} else {
+			return "error";
+		}
+	}
+	
 	// 展示没有过期的符合条件的考试
 	public String showTest() {
-		tests = new ArrayList<>();
+		testList = new ArrayList<>();
 		try {
 			// 获取学生考试的当前阶段
 			state = studentService.showInfoById(stu_id).getState();
@@ -70,38 +68,21 @@ public class OrderTestAction extends ActionSupport {
 			e.printStackTrace();
 		}
 		
-		Test[] test = orderTestService.showTest();
-		for (int i = 0; i < test.length; i++) {
-			if (state.equals(test[i].getState()))
-				tests.add(test[i]);
-		}
-		return "show_Test_sucess";
+		Test[] temp = orderTestService.showTest();
+		for (int i = 0;i < temp.length; i++)
+			if (temp[i].getState().equals(state)) {
+				testList.add(temp[i]);
+			}
+		return "show_Test_success";
 	}
 
 	public String showInfo() {
-		infos = new ArrayList<>();
-		OrderTestInfo[] info = orderTestService.showInfo(date);
-		for (int i = 0; i < info.length; i++) {
-			infos.add(info[i]);
-		}
+		infos = orderTestService.showInfo(date);
 		return "query_success";
-		/*
-		 * JSON HttpServletResponse response =
-		 * ServletActionContext.getResponse(); PrintWriter out = null; try {
-		 * response.setCharacterEncoding("utf-8"); out = response.getWriter();
-		 * String info = JSON.toJSONString(orderTestService.showInfo(date));
-		 * out.write(info.toCharArray()); } catch (IOException e) { // TODO
-		 * Auto-generated catch block e.printStackTrace(); } finally {
-		 * out.close(); }
-		 */
 	}
 
 	public String showTestByDate() {
-		infos = new ArrayList<>();
-		OrderTestInfo[] info = orderTestService.showInfo(date);
-		for (int i = 0;i < info.length; i++) {
-			infos.add(info[i]);
-		}
+		infos = orderTestService.showInfo(date);
 		return "query_success";
 	}
 	
@@ -145,19 +126,19 @@ public class OrderTestAction extends ActionSupport {
 		this.userToken = userToken;
 	}
 
-	public List<Test> getTests() {
+	public Test[] getTests() {
 		return tests;
 	}
 
-	public void setTests(List<Test> tests) {
+	public void setTests(Test[] tests) {
 		this.tests = tests;
 	}
 
-	public List<OrderTestInfo> getInfos() {
+	public OrderTestInfo[] getInfos() {
 		return infos;
 	}
 
-	public void setInfos(List<OrderTestInfo> infos) {
+	public void setInfos(OrderTestInfo[] infos) {
 		this.infos = infos;
 	}
 
@@ -167,6 +148,14 @@ public class OrderTestAction extends ActionSupport {
 
 	public void setState(String state) {
 		this.state = state;
+	}
+	
+	public List<Test> getTestList() {
+		return testList;
+	}
+
+	public void setTestList(List<Test> testList) {
+		this.testList = testList;
 	}
 
 }

@@ -3,6 +3,7 @@ package group.zerry.jiaxiao.service.serviceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import group.zerry.jiaxiao.dao.OrderCarDao;
 import group.zerry.jiaxiao.dao.OrderTestDao;
 import group.zerry.jiaxiao.dao.StudentDao;
 import group.zerry.jiaxiao.dao.TestDao;
@@ -26,6 +27,7 @@ public class OrderTestServiceImpl implements OrderTestService {
 			orderTestDao.addOrderTest(stu_id, test_id);
 			return true;
 		} catch (Exception e) {
+			e.printStackTrace();
 			return false;
 		}
 	}

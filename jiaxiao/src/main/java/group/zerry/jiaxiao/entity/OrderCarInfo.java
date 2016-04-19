@@ -1,6 +1,7 @@
 package group.zerry.jiaxiao.entity;
 
 public class OrderCarInfo {
+	private int    id;
 	private String student_name;
 	private String car_number;
 	private String car_type;
@@ -36,5 +37,11 @@ public class OrderCarInfo {
 	}
 	public void setStart_time(String start_time) {
 		this.start_time = start_time;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 }

@@ -262,7 +262,7 @@
 											class="m-left-xs">Inboxes</span> <span
 											class="badge badge-danger bounceIn animation-delay3">2</span>
 									</a></li>
-									<li><a href="signin.html"> <i
+									<li><a href="signin.jsp"> <i
 											class="fa fa-power-off fa-lg"></i><span class="m-left-xs">Sign
 												out</span>
 									</a></li>
@@ -433,7 +433,7 @@
 						</span> <span class="menu-content-hover block"> Pages </span>
 					</a>
 						<ul class="submenu">
-							<li><a href="signin.html"><span class="submenu-label">Sign
+							<li><a href="signin.jsp"><span class="submenu-label">Sign
 										in</span></a></li>
 							<li><a href="signup.html"><span class="submenu-label">Sign
 										Up</span></a></li>
@@ -457,7 +457,7 @@
 						</span> <span class="menu-content-hover block"> Menu </span>
 					</a>
 						<ul class="submenu">
-							<li class="openable"><a href="signin.html"> <span
+							<li class="openable"><a href="signin.jsp"> <span
 									class="submenu-label">menu 2.1</span> <small
 									class="badge badge-success badge-square bounceIn animation-delay2 m-left-xs pull-right">3</small>
 							</a>
@@ -512,8 +512,8 @@
 					<div class="col-sm-6">
 						<div class="page-title">信息总览</div>
 						<div class="page-sub-header">
-							Welcome Back, John Doe , <i class="fa fa-map-marker text-danger"></i>
-							London
+							Welcome Back, Zirui Zhu , <i class="fa fa-map-marker text-danger"></i>
+							<a href="">Harbin</a>
 						</div>
 					</div>
 					<div class="col-sm-6 text-right text-left-sm p-top-sm">

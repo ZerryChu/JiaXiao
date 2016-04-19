@@ -12,63 +12,71 @@
 	<!-- 当struts配置文件修改时是否自动加载 -->
 	<constant name="struts.configuration.xmlreload" value="true" />
 
-	<!-- 开发模式下打印详细的错误信息 -->
-	<constant name="struts.devMode" value="true" />
-
 	<constant name="struts.ui.theme" value="xhtml" />
-	
-	<!--  定义全局拦截器、返回结果  -->
+
+	<!-- 定义全局拦截器、返回结果 -->
 	<package name="global" extends="struts-default">
 		<interceptors>
-			<!--   权限验证   -->
+			<!-- 权限验证 -->
 			<interceptor name="authorityCheck"
 				class="group.zerry.jiaxiao.interceptors.AuthorityCheckInterceptor">
 				<param name="excludeMethods">login,showInfo,showInfoByStuId,showTest,showTestByDate,showStudentInfo,showStudentById</param>
 			</interceptor>
-			<!--   异常日志处理   -->
+			<!-- 异常日志处理 -->
 			<interceptor name="exceptionCatch"
 				class="group.zerry.jiaxiao.interceptors.ExceptionCatchLogger">
 			</interceptor>
-			
+
 			<interceptor-stack name="interceptors">
-                <interceptor-ref name="defaultStack" />
-                <interceptor-ref name="authorityCheck" />
-                <interceptor-ref name="exceptionCatch" />                
-            </interceptor-stack>
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="authorityCheck" />
+				<interceptor-ref name="exceptionCatch" />
+			</interceptor-stack>
 		</interceptors>
-		
-		<!--   定义默认拦截器  -->
+
+		<!-- 定义默认拦截器 -->
 		<default-interceptor-ref name="interceptors" />
-		 
+
 		<global-results>
 			<result name="wrong">/error.jsp</result>
 			<result name="error">/error.jsp</result>
-			<result name="noAuthority">/noAuthority.jsp</result>		
+			<result name="noAuthority">/noAuthority.jsp</result>
 		</global-results>
 	</package>
-	
+
 	<package name="default" namespace="/" extends="global">
 		<action name="user_*" class="group.zerry.jiaxiao.action.UserAction"
 			method="{1}">
-			<result name="success">/index.jsp?username=${username}&amp;userToken=${userToken}</result>
+			<result name="success">/index.jsp?username=${username}&amp;userToken=${userToken}
+			</result>
 		</action>
 		<action name="student_*" class="group.zerry.jiaxiao.action.StudentAction"
 			method="{1}">
 			<!-- <interceptor-ref name="checkAuthority"/> -->
-			<result name="success">/stu_info.jsp?username=${username}&amp;userToken=${userToken}</result>
+			<result name="success">/stu_info.jsp?username=${username}&amp;userToken=${userToken}
+			</result>
 		</action>
 		<action name="orderCar_*" class="group.zerry.jiaxiao.action.OrderCarAction"
 			method="{1}">
-			<result name="query_success">/car_plan.jsp?username=${username}&amp;userToken=${userToken}</result>
-			<result name="searchTime_success">/train_car.jsp?username=${username}&amp;userToken=${userToken}</result>
-			<result name="add_success">/car_plan.jsp?username=${username}&amp;userToken=${userToken}</result>
+			<result name="query_success">/car_plan.jsp?username=${username}&amp;userToken=${userToken}
+			</result>
+			<result name="searchTime_success">/train_car.jsp?username=${username}&amp;userToken=${userToken}
+			</result>
+			<result name="add_success">/car_plan.jsp?username=${username}&amp;userToken=${userToken}
+			</result>
+			<result name="delete_success">/car_plan.jsp?username=${username}&amp;userToken=${userToken}
+			</result>			
 			<!-- <result name="re" type="redirectAction">user_queryAllUser.action</result> -->
 		</action>
 		<action name="orderTest_*" class="group.zerry.jiaxiao.action.OrderTestAction"
 			method="{1}">
-			<result name="show_Test_sucess">/test_plan.jsp?username=${username}&amp;userToken=${userToken}</result>
-			<result name="query_success">/test_query.jsp?username=${username}&amp;userToken=${userToken}</result>
-			<result name="add_success">/test_query.jsp?username=${username}&amp;userToken=${userToken}</result>			
+			<result name="show_Test_success">/test_plan.jsp?username=${username}&amp;userToken=${userToken}
+			</result>
+			<result name="query_success">/test_query.jsp?username=${username}&amp;userToken=${userToken}
+			</result>
+			<result name="add_success">/test_query.jsp?username=${username}&amp;userToken=${userToken}
+			</result>
+			<!-- <result name="re" type="redirectAction">user_queryAllUser.action</result> -->
 		</action>
 	</package>
 

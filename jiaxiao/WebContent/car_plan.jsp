@@ -264,7 +264,7 @@
 											class="m-left-xs">Inboxes</span> <span
 											class="badge badge-danger bounceIn animation-delay3">2</span>
 									</a></li>
-									<li><a href="signin.html"> <i
+									<li><a href="signin.jsp"> <i
 											class="fa fa-power-off fa-lg"></i><span class="m-left-xs">Sign
 												out</span>
 									</a></li>
@@ -436,7 +436,7 @@
 						</span> <span class="menu-content-hover block"> Pages </span>
 					</a>
 						<ul class="submenu">
-							<li><a href="signin.html"><span class="submenu-label">Sign
+							<li><a href="signin.jsp"><span class="submenu-label">Sign
 										in</span></a></li>
 							<li><a href="signup.html"><span class="submenu-label">Sign
 										Up</span></a></li>
@@ -460,7 +460,7 @@
 						</span> <span class="menu-content-hover block"> Menu </span>
 					</a>
 						<ul class="submenu">
-							<li class="openable"><a href="signin.html"> <span
+							<li class="openable"><a href="signin.jsp"> <span
 									class="submenu-label">menu 2.1</span> <small
 									class="badge badge-success badge-square bounceIn animation-delay2 m-left-xs pull-right">3</small>
 							</a>
@@ -618,6 +618,7 @@
 						<div class="smart-widget-body">
 							<div class="form-group">
 								<label for="exampleInputEmail1">练车信息</label>
+								<form action="orderCar_deleteOrder?username=${param.username}&userToken=${param.userToken}" method="post">
 								<table border="0" style="text-align: center; height: 30px; margin-bottom: 30px; width: 100%;">									
 									<tr style="background-color: #2baab1; color: white;">
 										<td>姓名</td>
@@ -625,6 +626,7 @@
 										<td>车型</td>
 										<td>教练</td>
 										<td>时间</td>
+										<td>选定</td>
 									</tr>
 									<s:iterator value="orders" status="status">
 										<tr
@@ -633,12 +635,15 @@
 											<td><s:property value="orders[#status.index].car_number"/></td>
 											<td><s:property value="orders[#status.index].car_type"/></td>
 											<td><s:property value="orders[#status.index].coach_name"/></td>
-											<td><s:property value="orders[#status.index].start_time"/></td>											
+											<td><s:property value="orders[#status.index].start_time"/></td>
+											<td><input type="checkbox" name="order_id" value="<s:property value="orders[#status.index].id"/>" /></td>																													
 										</tr>
 									</s:iterator>
 								</table>
-								<button type="submit" class="btn btn-success btn-sm">上一页</button>
-								<button type="submit" class="btn btn-success btn-sm">下一页</button>	
+								<button class="btn btn-success btn-sm">上一页</button>
+								<button class="btn btn-success btn-sm">下一页</button>
+								<button type="submit" style="float: right;" class="btn btn-success btn-sm">撤销练车</button>
+								</form>
 							</div>
 						</div>
 					</div>

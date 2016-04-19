@@ -37,11 +37,11 @@ public class StudentAction extends ActionSupport {
 	
 	private Student       student;
 	private int           query_id; // student id
-	private List<Student> students;
+	private Student[]     students;
 
 	@Autowired
 	private StudentService studentService;
-	
+
 	public String register() {
 		boolean result = false;
 		try {
@@ -60,68 +60,30 @@ public class StudentAction extends ActionSupport {
 	}
 
 	public String showStudentInfo() {
-		students = new ArrayList<>();
-		Student[] stuArray = null;
 		try {
-			stuArray= studentService.showInfo();
-			for (int i = 0;i < stuArray.length; i++) {
-				students.add(stuArray[i]);
-			}
+			students =  studentService.showInfo();
 		} catch (Exception e) {
 			e.printStackTrace();
 			// 写日记 
 			return "error";
 		}
 		return "success";
-		
-		/* JSON
-		HttpServletResponse response = ServletActionContext.getResponse();
-		PrintWriter out = null;
-		try {
-			response.setCharacterEncoding("utf-8");
-			out = response.getWriter();
-			String info = JSON.toJSONString(studentService.showInfo());
-			out.write(info.toCharArray());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} finally {
-			out.close();
-		}
-		*/
 	}
 
-	public String showStudentById() {
-		students = new ArrayList<>();
-		
+	public String showStudentById() {		
 		// 未传参
 		if (0 == query_id) {
 			return "error";
 		}
 		
 		try {
-			students.add(studentService.showInfoById(query_id));
+			students = new Student[1];
+			students[0] = studentService.showInfoById(query_id);
 		} catch(Exception e) {
-			// 
+			e.printStackTrace();
 			return "error";
 		}
 		return "success";
-		
-		/* JSON
-		HttpServletResponse response = ServletActionContext.getResponse();
-		PrintWriter out = null;
-		try {
-			response.setCharacterEncoding("utf-8");
-			out = response.getWriter();
-			String info = JSON.toJSONString(studentService.showInfoById(id));
-			out.write(info.toCharArray());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} finally {
-			out.close();
-		}
-		*/
 	}
 
 	public Student getStudent() {
@@ -140,14 +102,14 @@ public class StudentAction extends ActionSupport {
 		this.query_id = query_id;
 	}
 	
-	public List<Student> getStudents() {
+	public Student[] getStudents() {
 		return students;
 	}
 
-	public void setStudents(List<Student> students) {
+	public void setStudents(Student[] students) {
 		this.students = students;
 	}
-	
+
 	public String getUsername() {
 		return username;
 	}

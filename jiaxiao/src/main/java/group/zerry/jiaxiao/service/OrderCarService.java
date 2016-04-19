@@ -12,4 +12,6 @@ public interface OrderCarService {
 	Car[] getCarInRest(String date);
 	
 	Coach[] getCoachInRest(String date);
+	
+	boolean deleteOrder(int id);
 }

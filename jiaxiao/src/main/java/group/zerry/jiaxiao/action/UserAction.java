@@ -4,9 +4,11 @@ import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.struts2.ServletActionContext;
+import org.apache.tomcat.util.net.SecureNioChannel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -14,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import com.opensymphony.xwork2.ActionSupport;
 
 import group.zerry.jiaxiao.service.UserService;
+import group.zerry.jiaxiao.service.serviceImpl.UserServiceImpl;
 
 
 @Controller  

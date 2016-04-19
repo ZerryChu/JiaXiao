@@ -264,7 +264,7 @@
 											class="m-left-xs">Inboxes</span> <span
 											class="badge badge-danger bounceIn animation-delay3">2</span>
 									</a></li>
-									<li><a href="signin.html"> <i
+									<li><a href="signin.jsp"> <i
 											class="fa fa-power-off fa-lg"></i><span class="m-left-xs">Sign
 												out</span>
 									</a></li>
@@ -381,15 +381,21 @@
 						</span> <span class="menu-content-hover block"> 教学 </span>
 					</a>
 						<ul class="submenu bg-palette4">
-							<li><a href="stu_info.jsp?username=${param.username}&userToken=${param.userToken}"><span class="submenu-label">学员查询</span></a></li>
-							<li><a href="stu_reg.jsp?username=${param.username}&userToken=${param.userToken}"><span class="submenu-label">新学员登记</span></a></li>
+							<li><a
+								href="stu_info.jsp?username=${param.username}&userToken=${param.userToken}"><span
+									class="submenu-label">学员查询</span></a></li>
+							<li><a
+								href="stu_reg.jsp?username=${param.username}&userToken=${param.userToken}"><span
+									class="submenu-label">新学员登记</span></a></li>
 							<li class="openable"><a href="#"><small
 									class="badge badge-success badge-square bounceIn animation-delay2 m-left-xs pull-right">2</small><span
 									class="submenu-label">练车管理</span></a>
 								<ul class="submenu third-level">
-									<li><a href="car_plan.jsp?username=${param.username}&userToken=${param.userToken}"><span
+									<li><a
+										href="car_plan.jsp?username=${param.username}&userToken=${param.userToken}"><span
 											class="submenu-label">练车记录查询</a></li>
-									<li><a href="train_car.jsp?username=${param.username}&userToken=${param.userToken}"><span
+									<li><a
+										href="train_car.jsp?username=${param.username}&userToken=${param.userToken}"><span
 											class="submenu-label">练车安排</span></a></li>
 								</ul></li>
 							<li class="openable"><a href="#"> <small
@@ -397,9 +403,11 @@
 									<span class="submenu-label">考试管理</span>
 							</a>
 								<ul class="submenu third-level">
-									<li><a href="test_query.jsp?username=${param.username}&userToken=${param.userToken}"><span
+									<li><a
+										href="test_query.jsp?username=${param.username}&userToken=${param.userToken}"><span
 											class="submenu-label">考试查询</a></li>
-									<li><a href="test_plan.jsp?username=${param.username}&userToken=${param.userToken}"><span
+									<li><a
+										href="test_plan.jsp?username=${param.username}&userToken=${param.userToken}"><span
 											class="submenu-label">考试安排</span></a></li>
 								</ul></li>
 						</ul></li>
@@ -436,7 +444,7 @@
 						</span> <span class="menu-content-hover block"> Pages </span>
 					</a>
 						<ul class="submenu">
-							<li><a href="signin.html"><span class="submenu-label">Sign
+							<li><a href="signin.jsp"><span class="submenu-label">Sign
 										in</span></a></li>
 							<li><a href="signup.html"><span class="submenu-label">Sign
 										Up</span></a></li>
@@ -460,7 +468,7 @@
 						</span> <span class="menu-content-hover block"> Menu </span>
 					</a>
 						<ul class="submenu">
-							<li class="openable"><a href="signin.html"> <span
+							<li class="openable"><a href="signin.jsp"> <span
 									class="submenu-label">menu 2.1</span> <small
 									class="badge badge-success badge-square bounceIn animation-delay2 m-left-xs pull-right">3</small>
 							</a>
@@ -551,7 +559,9 @@
 							</ul>
 						</div>
 						<div class="smart-widget-body">
-							<form action="orderCar_show?username=${param.username}&userToken=${param.userToken}" method="post">
+							<form
+								action="orderCar_show?username=${param.username}&userToken=${param.userToken}"
+								method="post">
 								<!--  
 								<div class="form-group">
 									<label for="exampleInputEmail1">学生id</label> <input
@@ -616,11 +626,13 @@
 							</ul>
 						</div>
 						<div class="smart-widget-body">
-							<form action="orderCar_registerForCar?username=${param.username}&userToken=${param.userToken}" method="post">
+							<form
+								action="orderCar_registerForCarOrder?username=${param.username}&userToken=${param.userToken}"
+								method="post">
 								<div class="form-group">
-									<label for="exampleInputEmail1">练车时间: <s:property value="date" /></label>
-									<input type="hidden" value="<s:property value="date" />"
-										name="date">
+									<label for="exampleInputEmail1">练车时间: <s:property
+											value="date" /></label> <input type="hidden"
+										value="<s:property value="date" />" name="date">
 								</div>
 
 								<div class="form-group">
@@ -631,43 +643,51 @@
 
 								<table border="0"
 									style="text-align: center; height: 30px; margin-bottom: 30px; width: 100%;">
-									<s:if test="coachs[0]!=null">
-										<tr style="background-color: #2baab1; color: white;">
-											<td colspan="4">空闲教练</td>
-										</tr>
-									</s:if>
+									<tr style="background-color: #2baab1; color: white;">
+										<td colspan="4">空闲教练</td>
+									</tr>
 									<tr>
-										<s:iterator value="coachs" status="status">
-											<!-- 做分页，优秀教练排序靠前 -->
-											<td><div>
-													<img style="width: 100px; margin: 30px;"
-														src="pic/<s:property value="coachs[#status.index].pic"/>.jpg"></img></br>
-													<input style="" type="radio" name="coach_id"
-														value="<s:property value="coachs[#status.index].id"/>">
-													<s:property value="coachs[#status.index].name" />
-												</div></td>
-										</s:iterator>
+										<s:if test="coachs[0]!=null">
+											<s:iterator value="coachs" status="status">
+												<!-- 做分页，优秀教练排序靠前 -->
+												<td><div>
+														<img style="width: 100px; margin: 30px;"
+															src="pic/<s:property value="coachs[#status.index].pic"/>.jpg"></img></br>
+														<input style="" type="radio" name="coach_id"
+															value="<s:property value="coachs[#status.index].id"/>">
+														<s:property value="coachs[#status.index].name" />
+													</div></td>
+											</s:iterator>
+										</s:if>
+										<s:else>
+											<td>无</td>
+										</s:else>
 									</tr>
 								</table>
 
 								<table border="0"
 									style="text-align: center; height: 30px; margin-bottom: 30px; width: 100%;">
+									<tr style="background-color: #2baab1; color: white;">
+										<td>id</td>
+										<td>车牌号码</td>
+										<td>车类型</td>
+									</tr>
 									<s:if test="cars[0]!=null">
-										<tr style="background-color: #2baab1; color: white;">
-											<td colspan="4">空闲车辆</td>
-										</tr>
+										<s:iterator value="cars" status="status">
+											<!-- 做分页 -->
+											<tr <s:if test="#status.odd">style="background-color: #f5f5f5;"</s:if>>
+												<td><input type="radio" name="car_id"
+													value="<s:property value="cars[#status.index].id"/>"></td>
+												<td><s:property value="cars[#status.index].car_number" /></td>
+												<td><s:property value="cars[#status.index].car_type" /></td>
+											</tr>
+										</s:iterator>
 									</s:if>
-									<s:iterator value="cars" status="status">
-										<!-- 做分页 -->
+									<s:else>
 										<tr>
-											<td><div>
-													<input type="radio" name="car_id"
-														value="<s:property value="cars[#status.index].id"/>">
-													<s:property value="cars[#status.index].car_number" />
-													<s:property value="cars[#status.index].car_type" />
-												</div></td>
+											<td>无</td>
 										</tr>
-									</s:iterator>
+									</s:else>
 								</table>
 
 								<button type="submit" class="btn btn-success btn-sm">登记</button>

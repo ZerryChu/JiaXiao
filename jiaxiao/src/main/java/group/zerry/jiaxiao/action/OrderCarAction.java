@@ -1,18 +1,9 @@
 package group.zerry.jiaxiao.action;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.servlet.http.HttpServletResponse;
-
-import org.apache.struts2.ServletActionContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
-import com.alibaba.fastjson.JSON;
 import com.opensymphony.xwork2.ActionSupport;
 
 import group.zerry.jiaxiao.entity.Car;
@@ -29,74 +20,37 @@ import group.zerry.jiaxiao.service.OrderCarService;
 public class OrderCarAction extends ActionSupport {
 	
 	// 身份验证
-	private String      username;
-	private String      userToken;
+	private String          username;
+	private String          userToken;
 
-	private int    		car_id;
-	private int	   		stu_id;
-	private int    		coach_id;
-	private String 		date;
-	private List<Coach> coachs;
-	private List<Car>   cars;
-	private List<OrderCarInfo> orders;
+	private int             order_id;
+	private int    		    car_id;
+	private int	   		    stu_id;
+	private int    		    coach_id;
+	private String 		    date;
+	private Coach[]         coachs;
+	private Car[]           cars;
+	private OrderCarInfo[]  orders;
 	
 	@Autowired
 	private OrderCarService orderCarService;
 	
-	public void findCoachInRest() {
-		coachs = new ArrayList<>();
-		Coach[] coach = orderCarService.getCoachInRest(date);
-		for (int i = 0;i < coach.length; i++) {
-			coachs.add(coach[i]);
-		}
-		
-		/* JSON
-		HttpServletResponse response = ServletActionContext.getResponse();
-		PrintWriter out = null;
-		try {
-			response.setCharacterEncoding("utf-8");
-			out = response.getWriter();
-			String info = JSON.toJSONString(orderCarService.getCoachInRest(date));
-			out.write(info.toCharArray());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} finally {
-			out.close();
-		}
-		*/
+	private void findCoachInRest() {
+		coachs = orderCarService.getCoachInRest(date);
 	}
 	
-	public void findCarInRest() {
-		cars = new ArrayList<>();
-		Car[] car = orderCarService.getCarInRest(date);
-		for (int i = 0;i < car.length; i++) {
-			cars.add(car[i]);
-		}
-		/* JSON
-		HttpServletResponse response = ServletActionContext.getResponse();
-		PrintWriter out = null;
-		try {
-			response.setCharacterEncoding("utf-8");
-			out = response.getWriter();
-			String info = JSON.toJSONString(orderCarService.getCarInRest(date));
-			out.write(info.toCharArray());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} finally {
-			out.close();
-		}
-		*/
+	private void findCarInRest() {
+		cars = orderCarService.getCarInRest(date);
 	}
 	
+	// 获取当天空闲的车辆与教练
 	public String show() {
 		findCarInRest();
 		findCoachInRest();
 		return "searchTime_success";
 	}
 	
-	public String registerForCar() {
+	public String registerForCarOrder() {
 		if (orderCarService.registerForCar(stu_id, car_id, coach_id, date)) {
 			return "add_success";
 		} else {
@@ -105,34 +59,22 @@ public class OrderCarAction extends ActionSupport {
 	}
 	
 	public String showInfo() {
-		orders = new ArrayList<>();
-		OrderCarInfo[] order = orderCarService.showCarOrderInfo(date);
-		for (int i = 0;i < order.length; i++) {
-			orders.add(order[i]);
-		}
+		orders = orderCarService.showCarOrderInfo(date);
 		return "query_success";
-		/* JSON
-		HttpServletResponse response = ServletActionContext.getResponse();
-		PrintWriter out = null;
-		try {
-			response.setCharacterEncoding("utf-8");
-			out = response.getWriter();
-			String info = JSON.toJSONString(orderCarService.showCarOrderInfo(date));
-			out.write(info.toCharArray());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} finally {
-			out.close();
-		}
-		*/
 	}
 	
-	public List<OrderCarInfo> getOrders() {
+	public String deleteOrder() {
+		if(true == orderCarService.deleteOrder(order_id))
+			return "delete_success";
+		else
+			return "erorr";
+	}
+
+	public OrderCarInfo[] getOrders() {
 		return orders;
 	}
 
-	public void setOrders(List<OrderCarInfo> orders) {
+	public void setOrders(OrderCarInfo[] orders) {
 		this.orders = orders;
 	}
 
@@ -168,22 +110,22 @@ public class OrderCarAction extends ActionSupport {
 		this.date = date;
 	}
 	
-	public List<Coach> getCoachs() {
+	public Coach[] getCoachs() {
 		return coachs;
 	}
 
-	public void setCoachs(List<Coach> coachs) {
+	public void setCoachs(Coach[] coachs) {
 		this.coachs = coachs;
 	}
 
-	public List<Car> getCars() {
+	public Car[] getCars() {
 		return cars;
 	}
 
-	public void setCars(List<Car> cars) {
+	public void setCars(Car[] cars) {
 		this.cars = cars;
 	}
-	
+
 	public String getUsername() {
 		return username;
 	}
@@ -200,4 +142,12 @@ public class OrderCarAction extends ActionSupport {
 		this.userToken = userToken;
 	}
 	
+	public int getOrder_id() {
+		return order_id;
+	}
+
+	public void setOrder_id(int order_id) {
+		this.order_id = order_id;
+	}
+
 }

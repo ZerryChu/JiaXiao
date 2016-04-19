@@ -6,5 +6,6 @@ public interface OrderCarDao {
 	void addOrderCarInfo(int stu_id, int car_id, int coach_id, String date);
 
 	OrderCarInfo[] selectOrderCarByDate(String date);
-		
+	
+	void deleteOrder(int id);
 }

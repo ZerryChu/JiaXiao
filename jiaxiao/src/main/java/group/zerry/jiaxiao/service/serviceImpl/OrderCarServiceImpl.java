@@ -53,4 +53,15 @@ public class OrderCarServiceImpl implements OrderCarService {
 		return coachDao.selectCoachInRest(date);
 	}
 
+	@Override
+	public boolean deleteOrder(int id) {
+		// TODO Auto-generated method stub
+		try {
+			orderCarDao.deleteOrder(id);
+		} catch(Exception e) {
+			return false;
+		}
+		return true;
+	}
+
 }

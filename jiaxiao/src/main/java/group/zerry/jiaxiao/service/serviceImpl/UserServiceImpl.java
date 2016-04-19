@@ -9,9 +9,10 @@ import group.zerry.jiaxiao.utils.EncodeTools;
 
 import org.springframework.stereotype.Service;
 
+import com.sun.org.apache.bcel.internal.generic.AALOAD;
+
 @Service(value = "userService")
 public class UserServiceImpl implements UserService {
-
 	@Autowired
 	private UserDao userdao;
 	

@@ -264,7 +264,7 @@
 											class="m-left-xs">Inboxes</span> <span
 											class="badge badge-danger bounceIn animation-delay3">2</span>
 									</a></li>
-									<li><a href="signin.html"> <i
+									<li><a href="signin.jsp"> <i
 											class="fa fa-power-off fa-lg"></i><span class="m-left-xs">Sign
 												out</span>
 									</a></li>
@@ -444,7 +444,7 @@
 						</span> <span class="menu-content-hover block"> Pages </span>
 					</a>
 						<ul class="submenu">
-							<li><a href="signin.html"><span class="submenu-label">Sign
+							<li><a href="signin.jsp"><span class="submenu-label">Sign
 										in</span></a></li>
 							<li><a href="signup.html"><span class="submenu-label">Sign
 										Up</span></a></li>
@@ -468,7 +468,7 @@
 						</span> <span class="menu-content-hover block"> Menu </span>
 					</a>
 						<ul class="submenu">
-							<li class="openable"><a href="signin.html"> <span
+							<li class="openable"><a href="signin.jsp"> <span
 									class="submenu-label">menu 2.1</span> <small
 									class="badge badge-success badge-square bounceIn animation-delay2 m-left-xs pull-right">3</small>
 							</a>
@@ -634,14 +634,14 @@
 											<td>开始时间</td>
 											<td>选定</td>
 										</tr>
-										<s:iterator value="tests" status="status">
+										<s:iterator value="testList" status="status">
 											<tr
 												<s:if test="#status.odd">style="background-color: #f5f5f5;"</s:if>>
-												<td><s:property value="tests[#status.index].id" /></td>
-												<td><s:property value="tests[#status.index].state" /></td>
-												<td><s:property value="tests[#status.index].start_time" /></td>
-												<td><input type="radio" name="id"
-													value="<s:property value="tests[#status.index].start_time"/>" /></td>
+												<td><s:property value="testList[#status.index].id" /></td>
+												<td><s:property value="testList[#status.index].state" /></td>
+												<td><s:property value="testList[#status.index].start_time" /></td>
+												<td><input type="radio" name="test_id"
+													value="<s:property value="testList[#status.index].id"/>" /></td>
 											</tr>
 										</s:iterator>
 									</table>		

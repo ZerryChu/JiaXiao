@@ -10,7 +10,7 @@ import com.opensymphony.xwork2.interceptor.MethodFilterInterceptor;
 
 /**
  * 
- * @author  朱梓瑞
+ * @author  
  * @content 检查用户操作权限
  *
  */

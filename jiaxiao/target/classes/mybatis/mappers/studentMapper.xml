@@ -24,13 +24,12 @@
 		INSERT INTO stu_inf (
 			id,
 			NAME,
-			test_id,
 			register_time,
 			pic,
 			state
 		)
 		VALUES (
-			#{id}, #{name}, 0, now(), #{pic}, '科目1'
+			#{id}, #{name}, now(), #{pic}, '科目1'
 		)
 	</insert>
 	
