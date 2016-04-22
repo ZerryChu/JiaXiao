@@ -31,6 +31,7 @@ public class OrderCarServiceImpl implements OrderCarService {
 			orderCarDao.addOrderCarInfo(stu_id, car_id, coach_id, start_time);
 			return true;
 		} catch (Exception e) {
+			e.printStackTrace();
 			return false;
 		}
 	}
@@ -38,19 +39,34 @@ public class OrderCarServiceImpl implements OrderCarService {
 	@Override
 	public OrderCarInfo[] showCarOrderInfo(String date) {
 		// TODO Auto-generated method stub
-		return orderCarDao.selectOrderCarByDate(date);
+		try {
+			return orderCarDao.selectOrderCarByDate(date);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@Override
 	public Car[] getCarInRest(String date) {
 		// TODO Auto-generated method stub
-		return carDao.selectCarsInRest(date);
+		try {
+			return carDao.selectCarsInRest(date);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@Override
 	public Coach[] getCoachInRest(String date) {
 		// TODO Auto-generated method stub
-		return coachDao.selectCoachInRest(date);
+		try {
+			return coachDao.selectCoachInRest(date);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@Override
@@ -58,10 +74,10 @@ public class OrderCarServiceImpl implements OrderCarService {
 		// TODO Auto-generated method stub
 		try {
 			orderCarDao.deleteOrder(id);
+			return true;
 		} catch(Exception e) {
 			return false;
 		}
-		return true;
 	}
 
 }

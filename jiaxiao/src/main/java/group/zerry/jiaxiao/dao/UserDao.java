@@ -6,4 +6,5 @@ import group.zerry.jiaxiao.entity.User;
 public interface UserDao {
 	public Count userLogin(String username, String password);
 	
+	public void  updatePwd(String username, String pwd);
 }

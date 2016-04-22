@@ -223,7 +223,7 @@
 						</ul></li>
 				</ul>
 
-				<a href="index.html" class="brand"> <i class="fa fa-database"></i><span
+				<a href="inbox.jsp?username=${param.username}&userToken=${param.userToken}" class="brand"> <i class="fa fa-database"></i><span
 					class="brand-name">驾校学员管理系统</span>
 				</a>
 			</div>

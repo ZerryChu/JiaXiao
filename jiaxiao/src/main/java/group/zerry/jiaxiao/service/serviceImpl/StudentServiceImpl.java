@@ -41,4 +41,16 @@ public class StudentServiceImpl implements StudentService {
 		return student;
 	}
 
+	@Override
+	public boolean deleteStudent(int stu_id) throws Exception {
+		// TODO Auto-generated method stub
+		try {
+			studentDao.deleteStudent(stu_id);
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+
 }

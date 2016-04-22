@@ -11,9 +11,10 @@ import group.zerry.jiaxiao.entity.Coach;
 import group.zerry.jiaxiao.entity.OrderCarInfo;
 import group.zerry.jiaxiao.service.OrderCarService;
 
-/*
+/**
  * @author Zirui Zhu
- * @content 练车相关
+ * @content 练车相关： 练车记录查询 练车记录添加 练车记录删除
+ * 
  */
 @Controller  
 @Scope("prototype") 
@@ -35,10 +36,12 @@ public class OrderCarAction extends ActionSupport {
 	@Autowired
 	private OrderCarService orderCarService;
 	
+	// 获取当天空闲教练
 	private void findCoachInRest() {
 		coachs = orderCarService.getCoachInRest(date);
 	}
 	
+	// 获取当天空闲车辆
 	private void findCarInRest() {
 		cars = orderCarService.getCarInRest(date);
 	}
@@ -63,6 +66,7 @@ public class OrderCarAction extends ActionSupport {
 		return "query_success";
 	}
 	
+	// 撤销练车记录
 	public String deleteOrder() {
 		if(true == orderCarService.deleteOrder(order_id))
 			return "delete_success";

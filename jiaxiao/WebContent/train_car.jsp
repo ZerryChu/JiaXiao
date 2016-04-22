@@ -209,7 +209,7 @@
 											href="signin.jsp">Log out</a>
 									</div>
 								</div></li>
-							<li><a href="inbox.html"> Inbox <span
+							<li><a href="inbox.jsp?username=${param.username}&userToken=${param.userToken}"> Inbox <span
 									class="badge badge-danger bounceIn animation-delay2 pull-right">1</span>
 							</a></li>
 							<li><a href="#"> Notification <span
@@ -260,7 +260,7 @@
 											class="fa fa-edit fa-lg"></i><span class="m-left-xs">My
 												Profile</span>
 									</a></li>
-									<li><a href="inbox.html"> <i class="fa fa-inbox fa-lg"></i><span
+									<li><a href="inbox.jsp?username=${param.username}&userToken=${param.userToken}"> <i class="fa fa-inbox fa-lg"></i><span
 											class="m-left-xs">Inboxes</span> <span
 											class="badge badge-danger bounceIn animation-delay3">2</span>
 									</a></li>
@@ -421,7 +421,7 @@
 							<li><a href="ui_element.html"><span
 									class="submenu-label">密码修改</span></a></li>
 						</ul></li>
-					<li class="bg-palette1"><a href="inbox.html"> <span
+					<li class="bg-palette1"><a href="inbox.jsp?username=${param.username}&userToken=${param.userToken}"> <span
 							class="menu-content block"> <span class="menu-icon"><i
 									class="block fa fa-envelope fa-lg"></i></span> <span
 								class="text m-left-sm">学员留言</span> <small
@@ -498,7 +498,7 @@
 					<a href="#" class="dropdwon-toggle font-18" data-toggle="dropdown"><i
 						class="ion-person-add"></i> </a>
 					<ul class="dropdown-menu">
-						<li><a href="inbox.html"> Inbox <span
+						<li><a href="inbox.jsp?username=${param.username}&userToken=${param.userToken}"> Inbox <span
 								class="badge badge-danger bounceIn animation-delay2 pull-right">1</span>
 						</a></li>
 						<li><a href="#"> Notification <span

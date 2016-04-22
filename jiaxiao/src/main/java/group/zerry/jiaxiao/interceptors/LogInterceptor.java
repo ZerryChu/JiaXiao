@@ -10,7 +10,7 @@ import com.opensymphony.xwork2.interceptor.MethodFilterInterceptor;
 public abstract class LogInterceptor extends MethodFilterInterceptor {
 	
 	// 写日志
-	protected abstract void log(String info, String method);
+	protected abstract void log(Exception e, String method);
 
 
 }

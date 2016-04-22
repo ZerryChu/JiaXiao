@@ -20,11 +20,11 @@ public class AuthorityCheckInterceptor extends MethodFilterInterceptor {
 	protected String doIntercept(ActionInvocation invocation) throws Exception {
 		// TODO Auto-generated method stub
 		HttpServletRequest request = ServletActionContext.getRequest();
-		//Map<String, Object> session = ServletActionContext.getContext().getSession();
 		String username = request.getParameter("username");
 		String userToken = request.getParameter("userToken");
 		HttpSession httpSession = request.getSession();
 		if (null != httpSession.getAttribute(username) && httpSession.getAttribute(username).equals(userToken))
+			// 权限验证成功, 执行action
 			return invocation.invoke(); 
 		else
 			return "noAuthority";

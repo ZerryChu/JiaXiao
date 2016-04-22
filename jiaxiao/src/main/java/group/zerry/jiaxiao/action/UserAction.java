@@ -28,24 +28,17 @@ public class UserAction  extends ActionSupport {
 	private String username;
 	private String userToken;
 	private String password;
+	private String new_password;
 	
 	@Autowired
 	private UserService userService;
 	
 	public String login() {
-		if (true == userService.login(username, password)) {
+		if (userService.login(username, password) == true) {
 			// 成功登录
 			
 			UUID uuid = UUID.randomUUID();
 			userToken = uuid.toString();
-			
-			/*   add cookie
-			Cookie cookie = new Cookie("userinfo", username + ',' + userToken);
-			cookie.setMaxAge(600);
-			cookie.setPath("/");
-			HttpServletResponse response =  ServletActionContext.getResponse();
-			response.addCookie(cookie);
-			*/
 			
 			//add session
 			Map<String, Object> session = ServletActionContext.getContext().getSession();
@@ -56,6 +49,25 @@ public class UserAction  extends ActionSupport {
 		}
 	}
 	
+	// 修改密码
+	public String updatePassword() {
+		if (userService.login(username, password) == true) {
+			// 验证账户和密码
+			userService.updatePwd(username, new_password);
+			return "success";
+		} else {
+			return "wrong";
+		}
+	}
+	
+	public String getNew_password() {
+		return new_password;
+	}
+
+	public void setNew_password(String new_password) {
+		this.new_password = new_password;
+	}
+
 	public String getUserToken() {
 		return userToken;
 	}

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -209,7 +209,7 @@
 											href="signin.jsp">Log out</a>
 									</div>
 								</div></li>
-							<li><a href="inbox.html"> Inbox <span
+							<li><a href="inbox.jsp?username=${param.username}&userToken=${param.userToken}"> Inbox <span
 									class="badge badge-danger bounceIn animation-delay2 pull-right">1</span>
 							</a></li>
 							<li><a href="#"> Notification <span
@@ -260,7 +260,7 @@
 											class="fa fa-edit fa-lg"></i><span class="m-left-xs">My
 												Profile</span>
 									</a></li>
-									<li><a href="inbox.html"> <i class="fa fa-inbox fa-lg"></i><span
+									<li><a href="inbox.jsp?username=${param.username}&userToken=${param.userToken}"> <i class="fa fa-inbox fa-lg"></i><span
 											class="m-left-xs">Inboxes</span> <span
 											class="badge badge-danger bounceIn animation-delay3">2</span>
 									</a></li>
@@ -381,17 +381,21 @@
 						</span> <span class="menu-content-hover block"> 教学 </span>
 					</a>
 						<ul class="submenu bg-palette4">
-							<li><a href="stu_info.jsp?username=${param.username}&userToken=${param.userToken}"><span
+							<li><a
+								href="stu_info.jsp?username=${param.username}&userToken=${param.userToken}"><span
 									class="submenu-label">学员查询</span></a></li>
-							<li><a href="stu_reg.jsp?username=${param.username}&userToken=${param.userToken}"><span
+							<li><a
+								href="stu_reg.jsp?username=${param.username}&userToken=${param.userToken}"><span
 									class="submenu-label">新学员登记</span></a></li>
 							<li class="openable"><a href="#"><small
 									class="badge badge-success badge-square bounceIn animation-delay2 m-left-xs pull-right">2</small><span
 									class="submenu-label">练车管理</span></a>
 								<ul class="submenu third-level">
-									<li><a href="car_plan.jsp?username=${param.username}&userToken=${param.userToken}"><span
+									<li><a
+										href="car_plan.jsp?username=${param.username}&userToken=${param.userToken}"><span
 											class="submenu-label">练车记录查询</a></li>
-									<li><a href="train_car.jsp?username=${param.username}&userToken=${param.userToken}"><span
+									<li><a
+										href="train_car.jsp?username=${param.username}&userToken=${param.userToken}"><span
 											class="submenu-label">练车安排</span></a></li>
 								</ul></li>
 							<li class="openable"><a href="#"> <small
@@ -399,9 +403,11 @@
 									<span class="submenu-label">考试管理</span>
 							</a>
 								<ul class="submenu third-level">
-									<li><a href="test_query.jsp?username=${param.username}&userToken=${param.userToken}"><span
+									<li><a
+										href="test_query.jsp?username=${param.username}&userToken=${param.userToken}"><span
 											class="submenu-label">考试查询</a></li>
-									<li><a href="test_plan.jsp?username=${param.username}&userToken=${param.userToken}"><span
+									<li><a
+										href="test_plan.jsp?username=${param.username}&userToken=${param.userToken}"><span
 											class="submenu-label">考试安排</span></a></li>
 								</ul></li>
 						</ul></li>
@@ -415,7 +421,7 @@
 							<li><a href="ui_element.html"><span
 									class="submenu-label">密码修改</span></a></li>
 						</ul></li>
-					<li class="bg-palette1"><a href="inbox.html"> <span
+					<li class="bg-palette1"><a href="inbox.jsp?username=${param.username}&userToken=${param.userToken}"> <span
 							class="menu-content block"> <span class="menu-icon"><i
 									class="block fa fa-envelope fa-lg"></i></span> <span
 								class="text m-left-sm">学员留言</span> <small
@@ -492,7 +498,7 @@
 					<a href="#" class="dropdwon-toggle font-18" data-toggle="dropdown"><i
 						class="ion-person-add"></i> </a>
 					<ul class="dropdown-menu">
-						<li><a href="inbox.html"> Inbox <span
+						<li><a href="inbox.jsp?username=${param.username}&userToken=${param.userToken}"> Inbox <span
 								class="badge badge-danger bounceIn animation-delay2 pull-right">1</span>
 						</a></li>
 						<li><a href="#"> Notification <span
@@ -511,7 +517,7 @@
 		</div>
 		<!-- sidebar-inner --> </aside>
 
-			<div class="main-container">
+		<div class="main-container">
 			<div class="padding-md">
 				<h2 class="header-text">
 					学员查询 <span class="sub-header"> student info </span>
@@ -553,15 +559,19 @@
 							</ul>
 						</div>
 						<div class="smart-widget-body">
-							<form action="student_showStudentById?username=${param.username}&userToken=${param.userToken}" method="post">
+							<form
+								action="student_showStudentById?username=${param.username}&userToken=${param.userToken}"
+								method="post">
 								<div class="form-group">
-									<label for="exampleInputEmail1">学生id</label> <input
-										type="text" class="form-control" id="exampleInputEmail1"
-										placeholder="id" name="query_id">
+									<label for="exampleInputEmail1">学生id</label> <input type="text"
+										class="form-control" id="exampleInputEmail1" placeholder="id"
+										name="query_id">
 								</div>
 								<!-- /form-group -->
 								<button type="submit" class="btn btn-success btn-sm">查询</button>
-								<a href="student_showStudentInfo?username=${param.username}&userToken=${param.userToken}" class="btn btn-success btn-sm">获取所有学生</a>							
+								<a
+									href="student_showStudentInfo?username=${param.username}&userToken=${param.userToken}"
+									class="btn btn-success btn-sm">获取所有学生</a>
 							</form>
 						</div>
 					</div>
@@ -614,25 +624,37 @@
 						<div class="smart-widget-body">
 							<div class="form-group">
 								<label for="exampleInputEmail1">学生信息</label>
-								<table border="0" style="text-align: center; height: 30px; margin-bottom: 30px; width: 100%;">									
-									<tr style="background-color: #2baab1; color: white;">
-										<td>id</td>
-										<td>姓名</td>
-										<td>考试阶段</td>
-										<td>注册时间</td>
-									</tr>
-									<s:iterator value="students" status="status">
-										<tr
-											<s:if test="#status.odd">style="background-color: #f5f5f5;"</s:if>>
-											<td><s:property value="students[#status.index].id"/></td>
-											<td><s:property value="students[#status.index].name"/></td>
-											<td><s:property value="students[#status.index].state"/></td>
-											<td><s:property value="students[#status.index].register_time"/></td>
+								<form
+									action="student_deleteStudent?username=${param.username}&userToken=${param.userToken}"
+									method="post">
+									<table border="0"
+										style="text-align: center; height: 30px; margin-bottom: 30px; width: 100%;">
+										<tr style="background-color: #2baab1; color: white;">
+											<td>id</td>
+											<td>姓名</td>
+											<td>考试阶段</td>
+											<td>注册时间</td>
+											<td>选定</td>
 										</tr>
-									</s:iterator>
-								</table>
-								<button type="submit" class="btn btn-success btn-sm">上一页</button>
-								<button type="submit" class="btn btn-success btn-sm">下一页</button>	
+										<s:iterator value="students" status="status">
+											<tr
+												<s:if test="#status.odd">style="background-color: #f5f5f5;"</s:if>>
+												<td><s:property value="students[#status.index].id" /></td>
+												<td><s:property value="students[#status.index].name" /></td>
+												<td><s:property value="students[#status.index].state" /></td>
+												<td><s:property
+														value="students[#status.index].register_time" /></td>
+												<td><input type="radio" name="query_id"
+													value="<s:property
+														value="students[#status.index].id" />" /></td>
+											</tr>
+										</s:iterator>
+									</table>
+									<button class="btn btn-success btn-sm">上一页</button>
+									<button class="btn btn-success btn-sm">下一页</button>
+									<button style="float: right;" type="submit"
+										class="btn btn-success btn-sm">撤销该学生</button>
+								</form>
 							</div>
 						</div>
 					</div>
@@ -739,6 +761,8 @@
 				transition : 'all 0.3s'
 			});
 		});
+	
+		
 	</script>
 
 </body>

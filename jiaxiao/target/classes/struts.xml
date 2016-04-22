@@ -78,6 +78,12 @@
 			</result>
 			<!-- <result name="re" type="redirectAction">user_queryAllUser.action</result> -->
 		</action>
+		<action name="msg_*" class="group.zerry.jiaxiao.action.MessageAction"
+			method="{1}">
+			<!-- <interceptor-ref name="checkAuthority"/> -->
+			<result name="success">/inbox.jsp?username=${username}&amp;userToken=${userToken}
+			</result>
+		</action>
 	</package>
 
 </struts>

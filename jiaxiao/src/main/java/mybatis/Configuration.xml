@@ -16,6 +16,7 @@
 		<typeAlias alias="Car" type="group.zerry.jiaxiao.entity.Car" />		
 		<typeAlias alias="Coach" type="group.zerry.jiaxiao.entity.Coach" />				
 		<typeAlias alias="OrderCarInfo" type="group.zerry.jiaxiao.entity.OrderCarInfo" />
+		<typeAlias alias="Message" type="group.zerry.jiaxiao.entity.Message" />		
 		
 	</typeAliases>
 

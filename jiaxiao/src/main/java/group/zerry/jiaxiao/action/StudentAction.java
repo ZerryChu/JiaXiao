@@ -59,6 +59,22 @@ public class StudentAction extends ActionSupport {
 		}
 	}
 
+	public String deleteStudent() {
+		boolean result = false;
+		try {
+			result = studentService.deleteStudent(query_id);
+		} catch(Exception e) {
+			e.printStackTrace();
+			return "error";
+		}
+		
+		if (true == result) {
+			return "success";
+		} else {
+			return "wrong";
+		}
+	}
+	
 	public String showStudentInfo() {
 		try {
 			students =  studentService.showInfo();

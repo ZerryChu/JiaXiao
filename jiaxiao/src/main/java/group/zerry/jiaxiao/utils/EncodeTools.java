@@ -5,7 +5,7 @@ import java.security.NoSuchAlgorithmException;
 
 /**
  * 编码工具
- * @author：zhuzirui
+ * @author：Zirui Zhu
  * @since：2014年11月15日 
  */
 public class EncodeTools {

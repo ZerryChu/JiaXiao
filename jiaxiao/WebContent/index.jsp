@@ -410,7 +410,7 @@
 							<li><a href="ui_element.html"><span
 									class="submenu-label">密码修改</span></a></li>
 						</ul></li>
-					<li class="bg-palette1"><a href="inbox.html"> <span
+					<li class="bg-palette1"><a href="inbox.jsp?username=${param.username}&userToken=${param.userToken}"> <span
 							class="menu-content block"> <span class="menu-icon"><i
 									class="block fa fa-envelope fa-lg"></i></span> <span
 								class="text m-left-sm">学员留言</span> <small

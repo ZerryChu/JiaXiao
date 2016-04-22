@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="group.zerry.jiaxiao.dao.MessageDao">
+	<select id="selectAllMsg" resultType="Message">
+		SELECT
+			msg_inf.id,
+			NAME AS stu_name,
+			state,
+			create_time,
+			msg AS content,
+			solved,
+			pic AS icon
+		FROM
+			msg_inf,
+			stu_inf
+		WHERE
+			stu_id = stu_inf.id
+	</select>
+	
+	<select id="selectUnsolvedMsg" resultType="Message">
+		SELECT
+			msg_inf.id,
+			NAME AS stu_name,
+			state,
+			create_time,
+			msg AS content,
+			solved,
+			pic AS icon
+		FROM
+			msg_inf,
+			stu_inf
+		WHERE
+			solved = 0
+		AND stu_id = stu_inf.id
+	</select>
+	
+</mapper>

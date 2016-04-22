@@ -5,6 +5,8 @@ import group.zerry.jiaxiao.entity.Student;
 public interface StudentService {
 	public boolean register(Student stu) throws Exception;
 	
+	public boolean deleteStudent(int stu_id) throws Exception;
+	
 	public Student[] showInfo() throws Exception;
 
 	public Student showInfoById(int id) throws Exception;

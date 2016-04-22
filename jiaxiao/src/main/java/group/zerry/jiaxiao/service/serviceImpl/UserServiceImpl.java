@@ -14,18 +14,33 @@ import com.sun.org.apache.bcel.internal.generic.AALOAD;
 @Service(value = "userService")
 public class UserServiceImpl implements UserService {
 	@Autowired
-	private UserDao userdao;
-	
+	private UserDao userDao;
+
 	@Override
 	public boolean login(String username, String password) {
 		// TODO Auto-generated method stub
+		// 密码先加密再比对
 		password = EncodeTools.encoder(password, password.substring(0, 4));
-		Count count = userdao.userLogin(username, password);
+		Count count = userDao.userLogin(username, password);
 		if (0 == count.getNumber()) {
 			return false;
 		} else {
 			return true;
 		}
 	}
-	
+
+	@Override
+	public boolean updatePwd(String username, String new_pwd) {
+		// TODO Auto-generated method stub
+		try {
+			// 密码加密
+			new_pwd = EncodeTools.encoder(new_pwd, new_pwd.substring(0, 4));
+			userDao.updatePwd(username, new_pwd);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
+	}
+
 }

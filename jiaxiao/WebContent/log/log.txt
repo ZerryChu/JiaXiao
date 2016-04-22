@@ -1,53 +1,80 @@
-2016-04-16 17:53:22,859 - org.springframework.web.context.ContextLoader -0    [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.springframework.web.context.ContextLoader  - Root WebApplicationContext: initialization started
-2016-04-16 17:53:22,941 - org.springframework.web.context.support.XmlWebApplicationContext -82   [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.springframework.web.context.support.XmlWebApplicationContext  - Refreshing Root WebApplicationContext: startup date [Sat Apr 16 17:53:22 CST 2016]; root of context hierarchy
-2016-04-16 17:53:22,988 - org.springframework.beans.factory.xml.XmlBeanDefinitionReader -129  [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from file [/Users/zhuzirui/Documents/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/jiaxiao/WEB-INF/classes/spring-bean.xml]
-2016-04-16 17:53:23,013 - org.springframework.beans.factory.xml.XmlBeanDefinitionReader -154  [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from file [/Users/zhuzirui/Documents/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/jiaxiao/WEB-INF/classes/spring-cfg.xml]
-2016-04-16 17:53:23,115 - org.springframework.beans.factory.xml.XmlBeanDefinitionReader -256  [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from file [/Users/zhuzirui/Documents/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/jiaxiao/WEB-INF/classes/spring-common.xml]
-2016-04-16 17:53:23,894 - org.springframework.web.context.ContextLoader -1035 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.springframework.web.context.ContextLoader  - Root WebApplicationContext: initialization completed in 1034 ms
-2016-04-16 17:53:24,145 - com.opensymphony.xwork2.config.providers.XmlConfigurationProvider -1286 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  com.opensymphony.xwork2.config.providers.XmlConfigurationProvider  - Parsing configuration file [struts-default.xml]
-2016-04-16 17:53:24,218 - com.opensymphony.xwork2.config.providers.XmlConfigurationProvider -1359 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  com.opensymphony.xwork2.config.providers.XmlConfigurationProvider  - Parsing configuration file [struts-plugin.xml]
-2016-04-16 17:53:24,228 - com.opensymphony.xwork2.config.providers.XmlConfigurationProvider -1369 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  com.opensymphony.xwork2.config.providers.XmlConfigurationProvider  - Parsing configuration file [struts.xml]
-2016-04-16 17:53:24,231 - org.apache.struts2.config.AbstractBeanSelectionProvider -1372 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (spring) for (com.opensymphony.xwork2.ObjectFactory)
-2016-04-16 17:53:24,231 - org.apache.struts2.config.AbstractBeanSelectionProvider -1372 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.factory.ActionFactory)
-2016-04-16 17:53:24,231 - org.apache.struts2.config.AbstractBeanSelectionProvider -1372 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.factory.ResultFactory)
-2016-04-16 17:53:24,231 - org.apache.struts2.config.AbstractBeanSelectionProvider -1372 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.factory.ConverterFactory)
-2016-04-16 17:53:24,232 - org.apache.struts2.config.AbstractBeanSelectionProvider -1373 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.factory.InterceptorFactory)
-2016-04-16 17:53:24,233 - org.apache.struts2.config.AbstractBeanSelectionProvider -1374 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.factory.ValidatorFactory)
-2016-04-16 17:53:24,233 - org.apache.struts2.config.AbstractBeanSelectionProvider -1374 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.factory.UnknownHandlerFactory)
-2016-04-16 17:53:24,233 - org.apache.struts2.config.AbstractBeanSelectionProvider -1374 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.FileManagerFactory)
-2016-04-16 17:53:24,233 - org.apache.struts2.config.AbstractBeanSelectionProvider -1374 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.XWorkConverter)
-2016-04-16 17:53:24,233 - org.apache.struts2.config.AbstractBeanSelectionProvider -1374 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.CollectionConverter)
-2016-04-16 17:53:24,233 - org.apache.struts2.config.AbstractBeanSelectionProvider -1374 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.ArrayConverter)
-2016-04-16 17:53:24,233 - org.apache.struts2.config.AbstractBeanSelectionProvider -1374 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.DateConverter)
-2016-04-16 17:53:24,233 - org.apache.struts2.config.AbstractBeanSelectionProvider -1374 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.NumberConverter)
-2016-04-16 17:53:24,233 - org.apache.struts2.config.AbstractBeanSelectionProvider -1374 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.StringConverter)
-2016-04-16 17:53:24,233 - org.apache.struts2.config.AbstractBeanSelectionProvider -1374 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ConversionPropertiesProcessor)
-2016-04-16 17:53:24,234 - org.apache.struts2.config.AbstractBeanSelectionProvider -1375 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ConversionFileProcessor)
-2016-04-16 17:53:24,234 - org.apache.struts2.config.AbstractBeanSelectionProvider -1375 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ConversionAnnotationProcessor)
-2016-04-16 17:53:24,234 - org.apache.struts2.config.AbstractBeanSelectionProvider -1375 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.conversion.TypeConverterCreator)
-2016-04-16 17:53:24,234 - org.apache.struts2.config.AbstractBeanSelectionProvider -1375 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.conversion.TypeConverterHolder)
-2016-04-16 17:53:24,234 - org.apache.struts2.config.AbstractBeanSelectionProvider -1375 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.TextProvider)
-2016-04-16 17:53:24,234 - org.apache.struts2.config.AbstractBeanSelectionProvider -1375 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.LocaleProvider)
-2016-04-16 17:53:24,234 - org.apache.struts2.config.AbstractBeanSelectionProvider -1375 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.ActionProxyFactory)
-2016-04-16 17:53:24,234 - org.apache.struts2.config.AbstractBeanSelectionProvider -1375 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ObjectTypeDeterminer)
-2016-04-16 17:53:24,234 - org.apache.struts2.config.AbstractBeanSelectionProvider -1375 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (org.apache.struts2.dispatcher.mapper.ActionMapper)
-2016-04-16 17:53:24,234 - org.apache.struts2.config.AbstractBeanSelectionProvider -1375 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (jakarta) for (org.apache.struts2.dispatcher.multipart.MultiPartRequest)
-2016-04-16 17:53:24,234 - org.apache.struts2.config.AbstractBeanSelectionProvider -1375 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (org.apache.struts2.views.freemarker.FreemarkerManager)
-2016-04-16 17:53:24,235 - org.apache.struts2.config.AbstractBeanSelectionProvider -1376 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (org.apache.struts2.components.UrlRenderer)
-2016-04-16 17:53:24,235 - org.apache.struts2.config.AbstractBeanSelectionProvider -1376 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.validator.ActionValidatorManager)
-2016-04-16 17:53:24,235 - org.apache.struts2.config.AbstractBeanSelectionProvider -1376 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.util.ValueStackFactory)
-2016-04-16 17:53:24,235 - org.apache.struts2.config.AbstractBeanSelectionProvider -1376 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionProvider)
-2016-04-16 17:53:24,235 - org.apache.struts2.config.AbstractBeanSelectionProvider -1376 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionContextFactory)
-2016-04-16 17:53:24,236 - org.apache.struts2.config.AbstractBeanSelectionProvider -1377 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.util.PatternMatcher)
-2016-04-16 17:53:24,236 - org.apache.struts2.config.AbstractBeanSelectionProvider -1377 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (org.apache.struts2.util.ContentTypeMatcher)
-2016-04-16 17:53:24,236 - org.apache.struts2.config.AbstractBeanSelectionProvider -1377 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (org.apache.struts2.dispatcher.StaticContentLoader)
-2016-04-16 17:53:24,236 - org.apache.struts2.config.AbstractBeanSelectionProvider -1377 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.UnknownHandlerManager)
-2016-04-16 17:53:24,236 - org.apache.struts2.config.AbstractBeanSelectionProvider -1377 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (org.apache.struts2.views.util.UrlHelper)
-2016-04-16 17:53:24,236 - org.apache.struts2.config.AbstractBeanSelectionProvider -1377 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.util.TextParser)
-2016-04-16 17:53:24,236 - org.apache.struts2.config.AbstractBeanSelectionProvider -1377 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (org.apache.struts2.dispatcher.DispatcherErrorHandler)
-2016-04-16 17:53:24,236 - org.apache.struts2.config.AbstractBeanSelectionProvider -1377 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.security.ExcludedPatternsChecker)
-2016-04-16 17:53:24,236 - org.apache.struts2.config.AbstractBeanSelectionProvider -1377 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.config.AbstractBeanSelectionProvider  - Choosing bean (struts) for (com.opensymphony.xwork2.security.AcceptedPatternsChecker)
-2016-04-16 17:53:24,255 - org.apache.struts2.spring.StrutsSpringObjectFactory -1396 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.spring.StrutsSpringObjectFactory  - Initializing Struts-Spring integration...
-2016-04-16 17:53:24,256 - com.opensymphony.xwork2.spring.SpringObjectFactory -1397 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  com.opensymphony.xwork2.spring.SpringObjectFactory  - Setting autowire strategy to type
-2016-04-16 17:53:24,256 - org.apache.struts2.spring.StrutsSpringObjectFactory -1397 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.apache.struts2.spring.StrutsSpringObjectFactory  - ... initialized Struts-Spring integration successfully
-2016-04-16 17:54:55,072 - org.springframework.web.context.support.XmlWebApplicationContext -92213 [ContainerBackgroundProcessor[StandardEngine[Catalina]]] INFO  org.springframework.web.context.support.XmlWebApplicationContext  - Closing Root WebApplicationContext: startup date [Sat Apr 16 17:53:22 CST 2016]; root of context hierarchy
+no_login, showStudentInfo, success,Apr 22, 2016 12:08:51 PM
+no_login, showStudentInfo, success,Apr 22, 2016 12:08:51 PM
+no_login, showStudentInfo, success,Apr 22, 2016 12:08:51 PM
+no_login, showStudentInfo, success,Apr 22, 2016 12:08:52 PM
+no_login, showStudentInfo, success,Apr 22, 2016 12:08:54 PM
+no_login, showStudentInfo, success,Apr 22, 2016 12:08:55 PM
+no_login, showStudentInfo, success,Apr 22, 2016 12:08:56 PM
+no_login, showStudentInfo, success,Apr 22, 2016 12:09:00 PM
+no_login, showStudentInfo, success,Apr 22, 2016 12:09:01 PM
+no_login, showStudentInfo, success,Apr 22, 2016 12:09:01 PM
+zerry, login, success,Apr 22, 2016 12:18:50 PM
+zerry, showTestByDate, query_success,Apr 22, 2016 12:20:08 PM
+zerry, showTestByDate, query_success,Apr 22, 2016 12:20:10 PM
+zerry, showTestByDate, query_success,Apr 22, 2016 12:20:14 PM
+zerry, showTestByDate, query_success,Apr 22, 2016 12:20:17 PM
+zerry, showTestByDate, query_success,Apr 22, 2016 12:20:20 PM
+zerry, showInfo, query_success,Apr 22, 2016 12:20:30 PM
+zerry, showInfo, query_success,Apr 22, 2016 12:20:33 PM
+zerry, showInfo, query_success,Apr 22, 2016 12:20:57 PM
+zerry, showInfo, query_success,Apr 22, 2016 12:21:02 PM
+zerry, showMsg, null,Apr 22, 2016 9:39:36 PM
+zerry, showMsg, null,Apr 22, 2016 9:41:56 PM
+zerry, showMsg, null,Apr 22, 2016 9:47:55 PM
+zerry, showMsg, null,Apr 22, 2016 9:47:57 PM
+zerry, showMsg, null,Apr 22, 2016 9:48:01 PM
+zerry, showMsg, null,Apr 22, 2016 9:49:41 PM
+zerry, showMsg, null,Apr 22, 2016 9:50:24 PM
+zerry, showMsg, null,Apr 22, 2016 9:51:55 PM
+zerry, showMsg, null,Apr 22, 2016 9:52:10 PM
+zerry, showMsg, null,Apr 22, 2016 9:52:13 PM
+zerry, showMsg, null,Apr 22, 2016 9:52:15 PM
+zerry, showMsg, null,Apr 22, 2016 9:52:17 PM
+zerry, showMsg, null,Apr 22, 2016 9:52:22 PM
+zerry, showMsg, null,Apr 22, 2016 9:52:26 PM
+zerry, showMsg, null,Apr 22, 2016 9:52:44 PM
+zerry, showMsg, null,Apr 22, 2016 9:52:49 PM
+zerry, showMsg, null,Apr 22, 2016 9:53:18 PM
+zerry, showMsg, null,Apr 22, 2016 9:54:01 PM
+zerry, showMsg, null,Apr 22, 2016 9:56:50 PM
+zerry, showMsg, null,Apr 22, 2016 10:04:26 PM
+zerry, showMsg, null,Apr 22, 2016 10:04:31 PM
+zerry, showMsg, null,Apr 22, 2016 10:04:34 PM
+zerry, showMsg, null,Apr 22, 2016 10:04:36 PM
+zerry, showMsg, null,Apr 22, 2016 10:04:38 PM
+zerry, showMsg, null,Apr 22, 2016 10:05:09 PM
+zerry, showMsg, null,Apr 22, 2016 10:07:05 PM
+zerry, showMsg, null,Apr 22, 2016 10:07:08 PM
+zerry, showMsg, null,Apr 22, 2016 10:07:10 PM
+zerry, showMsg, null,Apr 22, 2016 10:07:20 PM
+zerry, showMsg, null,Apr 22, 2016 10:07:22 PM
+zerry, showMsg, null,Apr 22, 2016 10:08:21 PM
+zerry, showMsg, null,Apr 22, 2016 10:08:26 PM
+zerry, showMsg, null,Apr 22, 2016 10:08:45 PM
+zerry, showMsg, null,Apr 22, 2016 10:08:50 PM
+zerry, showMsg, null,Apr 22, 2016 10:10:14 PM
+zerry, showMsg, null,Apr 22, 2016 10:10:38 PM
+zerry, showMsg, null,Apr 22, 2016 10:10:40 PM
+zerry, login, success,Apr 22, 2016 11:43:43 PM
+zerry, showMsg, null,Apr 22, 2016 11:43:48 PM
+zerry, showMsg, null,Apr 22, 2016 11:45:58 PM
+zerry, showMsg, null,Apr 23, 2016 12:24:45 AM
+zerry, reply, null,Apr 23, 2016 12:24:52 AM
+zerry, showMsg, null,Apr 23, 2016 12:24:54 AM
+zerry, showMsg, null,Apr 23, 2016 12:25:49 AM
+zerry, showMsg, null,Apr 23, 2016 12:25:52 AM
+zerry, showMsg, null,Apr 23, 2016 12:27:36 AM
+zerry, showMsg, null,Apr 23, 2016 12:28:17 AM
+zerry, showMsg, null,Apr 23, 2016 12:28:25 AM
+zerry, showMsg, null,Apr 23, 2016 12:29:24 AM
+zerry, showMsg, null,Apr 23, 2016 12:29:53 AM
+zerry, showMsg, null,Apr 23, 2016 12:30:34 AM
+zerry, showMsg, null,Apr 23, 2016 12:30:38 AM
+zerry, showMsg, null,Apr 23, 2016 12:30:39 AM
+zerry, showMsg, null,Apr 23, 2016 12:30:55 AM
+zerry, showMsg, null,Apr 23, 2016 12:33:47 AM
+zerry, showMsg, null,Apr 23, 2016 12:34:31 AM
+zerry, reply, null,Apr 23, 2016 12:34:41 AM
+zerry, showMsg, null,Apr 23, 2016 12:34:45 AM
+zerry, showMsg, null,Apr 23, 2016 12:35:17 AM
+zerry, showMsg, null,Apr 23, 2016 12:35:59 AM
