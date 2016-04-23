@@ -11,7 +11,8 @@
 			create_time,
 			msg AS content,
 			solved,
-			pic AS icon
+			pic AS icon,
+			reply
 		FROM
 			msg_inf,
 			stu_inf
@@ -27,7 +28,8 @@
 			create_time,
 			msg AS content,
 			solved,
-			pic AS icon
+			pic AS icon,
+			reply
 		FROM
 			msg_inf,
 			stu_inf
@@ -36,4 +38,23 @@
 		AND stu_id = stu_inf.id
 	</select>
 	
+	<delete id="deleteMsg">
+		DELETE
+		FROM
+			msg_inf
+		WHERE
+			<foreach collection="array" item="id" index="index" open=" "
+				close=" " separator=" or ">
+				id=#{id}
+			</foreach>
+	</delete>
+
+	<update id="addReply">
+		UPDATE msg_inf
+			SET reply = #{1},
+			solved = 1
+		WHERE
+			id = #{0}
+	</update>
+
 </mapper>

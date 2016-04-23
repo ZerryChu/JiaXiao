@@ -7,4 +7,7 @@ public interface MessageService {
 
 	public Message[] showAllMsg();
 
+	public boolean   deleteMsg(int[] id);
+	
+	public boolean   replyMsg(int id, String content);
 }

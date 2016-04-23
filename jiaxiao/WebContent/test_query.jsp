@@ -553,6 +553,16 @@
 							</ul>
 						</div>
 						<div class="smart-widget-body">
+							<form action="orderTest_showTestByStuId?username=${param.username}&userToken=${param.userToken}" method="post">
+								<div class="form-group">
+									<label for="exampleInputEmail1">学生id</label> <input
+										type="text" class="form-control" id="exampleInputEmail1"
+										placeholder="stu_id" name="stu_id">
+								</div>
+								<!-- /form-group -->
+								<button type="submit" class="btn btn-success btn-sm">查询</button>
+							</form>
+							<br>
 							<form action="orderTest_showTestByDate?username=${param.username}&userToken=${param.userToken}" method="post">
 								<div class="form-group">
 									<label for="exampleInputEmail1">日期</label> <input

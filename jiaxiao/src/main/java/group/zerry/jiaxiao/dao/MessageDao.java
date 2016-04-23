@@ -7,4 +7,8 @@ public interface MessageDao {
 	
 	public Message[] selectUnsolvedMsg();
 	
+	public boolean   deleteMsg(int[] id);
+	
+	public boolean   addReply(int id, String content);
+	
 }

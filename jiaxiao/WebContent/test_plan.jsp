@@ -617,7 +617,7 @@
 								<li style="background-color: #fff;" data-color="reset"></li>
 							</ul>
 						</div>
-						<form action="orderTest_registerForTest" method="post">
+						<form action="orderTest_registerForTest?username=${param.username}&userToken=${param.userToken}" method="post">
 							<div class="smart-widget-body">
 								<div class="form-group">
 									<div class="form-group">

@@ -12,7 +12,14 @@ public class Message {
 	private String  content;
 	private int     solved;
 	private String  icon;
+	private String  reply;
 	
+	public String getReply() {
+		return reply;
+	}
+	public void setReply(String reply) {
+		this.reply = reply;
+	}
 	public int getId() {
 		return id;
 	}

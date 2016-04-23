@@ -24,5 +24,17 @@ public class MessageServiceImpl implements MessageService {
 		// TODO Auto-generated method stub
 		return messageDao.selectAllMsg();
 	}
+
+	@Override
+	public boolean deleteMsg(int[] id) {
+		// TODO Auto-generated method stub
+		return messageDao.deleteMsg(id);
+	}
+
+	@Override
+	public boolean replyMsg(int id, String content) {
+		// TODO Auto-generated method stub
+		return messageDao.addReply(id, content);
+	}
 	
 }

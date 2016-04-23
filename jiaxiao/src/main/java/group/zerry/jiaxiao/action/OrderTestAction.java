@@ -44,11 +44,11 @@ public class OrderTestAction extends ActionSupport {
 	@Autowired
 	private StudentService studentService;
 
-	public String showInfoByStuId() {
+	public String showTestByStuId() {
 		infos = orderTestService.showInfoByStuId(stu_id);
 		return "query_success";
 	}
-
+	
 	public String registerForTest() {
 		if (orderTestService.registerForTest(stu_id, test_id)) {
 			return "add_success";

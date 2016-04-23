@@ -536,10 +536,10 @@
 						<div class="inbox-menu-header">FOLDER</div>
 
 						<ul>
-							<li class="active"><a href="#"> <span
-									class="badge badge-success m-right-xs">5</span> 收件箱
+							<li class="active"><a style="cursor: pointer;" id="solved">
+									<span class="badge badge-success m-right-xs">5</span> 收件箱
 							</a></li>
-							<li><a href="#"> 未处理 </a></li>
+							<li><a style="cursor: pointer;" id="unsolved"> 未处理 </a></li>
 						</ul>
 
 					</div>
@@ -598,7 +598,7 @@
 					<div class="pagination-row clearfix">
 						<div class="pull-right pull-left-sm">
 							<div class="inline-block vertical-middle m-right-xs">Page 1
-								of 4</div>
+								of 1</div>
 							<ul class="pagination vertical-middle">
 								<li class="disabled"><a href="#"><i
 										class="fa fa-step-backward"></i></a></li>
@@ -629,6 +629,8 @@
 	<!-- Jquery -->
 	<script src="js/jquery-1.11.1.min.js"></script>
 
+	<script src="js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+
 	<!-- Bootstrap -->
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 
@@ -650,6 +652,14 @@
 
 	<script>
 		showMsg(1);
+
+		$("#solved").click(function() {
+			showMsg(1);
+		})
+
+		$("#unsolved").click(function() {
+			showMsg(0);
+		})
 
 		$(function() {
 			$('.inbox-check').click(function() {
@@ -720,10 +730,20 @@
 															+ data.returndata[i].create_time
 															+ "</td><td><button class=\"btn btn-success btn-sm\" id=\"msg" 
 															+ data.returndata[i].id 
-															+ "\">解决</button></td></tr>"
-															+ "<tr><td style=\"background-color: #dedede;\" colspan=\"6\"><form action=\"msg_reply?username=${param.username}&userToken=${param.userToken}\" method=\"post\"><input style=\"margin-left: 7%; width: 80%;\" type=\"text\" name=\"reply\"><input type=\"hidden\" name=\"id\" value=\""
+															+ "\">解决</button></td></tr>";
+													if (data.returndata[i].reply != null
+															&& data.returndata[i].reply != "")
+														str += "<tr style=\"display: none;\" id=\"tr"
+								+ data.returndata[i].id
+								+ "\"><td style=\"background-color: #dedede;\" colspan=\"6\">"
+																+ data.returndata[i].reply
+																+ "</td></tr>";
+													else
+														str += "<tr style=\"display: none;\" id=\"tr"
 															+ data.returndata[i].id
-															+ "\"><input type=\"submit\" value=\"解决\"></td></tr>";
+															+ "\"><td style=\"background-color: #dedede;\" colspan=\"6\"><form action=\"msg_reply?username=${param.username}&userToken=${param.userToken}\" method=\"post\"><input style=\"margin-left: 7%; width: 80%;\" type=\"text\" name=\"reply\"><input type=\"hidden\" name=\"reply_id\" value=\""
+															+ data.returndata[i].id
+															+ "\"><input type=\"submit\" value=\"解决\"></form></td></tr>";
 													i++;
 												}
 												$(".msg").append(str);
@@ -731,6 +751,11 @@
 						}
 					});
 		}
+
+		$(".btn-success").live('click', function() {
+			var id = $(this).attr("id").substr(3);
+			$("#tr" + id).slideToggle();
+		})
 	</script>
 
 </body>

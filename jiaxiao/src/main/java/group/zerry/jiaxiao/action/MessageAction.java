@@ -32,7 +32,10 @@ public class MessageAction extends ActionSupport {
 	 * params: 1: 获取所有留言 2: 获取未处理的留言
 	 * 
 	 */
-	private int flag;
+	private int    flag;
+	private String reply;
+	private int[]    id;
+	private int    reply_id;
 
 	@Autowired
 	private MessageService messageService;
@@ -66,11 +69,13 @@ public class MessageAction extends ActionSupport {
 	}
 
 	public String deleteMsg() {
-		return null;
+		messageService.deleteMsg(id);
+		return "success";
 	}
 	
 	public String reply() {
-		return null;
+		messageService.replyMsg(reply_id, reply);
+		return "success";
 	}
 	
 	private Message[] showAllMsg() {
@@ -104,4 +109,29 @@ public class MessageAction extends ActionSupport {
 	public void setUserToken(String userToken) {
 		this.userToken = userToken;
 	}
+	
+	public String getReply() {
+		return reply;
+	}
+
+	public void setReply(String reply) {
+		this.reply = reply;
+	}
+
+	public int[] getId() {
+		return id;
+	}
+
+	public void setId(int[] id) {
+		this.id = id;
+	}
+	
+	public int getReply_id() {
+		return reply_id;
+	}
+
+	public void setReply_id(int reply_id) {
+		this.reply_id = reply_id;
+	}
+	
 }
